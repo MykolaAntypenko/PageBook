@@ -8,6 +8,7 @@
 </head>
 <body>
 	<input type="checkbox" id="nav-toggle" hidden>
+	<input type="checkbox" id="close" hidden>
 	<header>
 		<div class="left_header">
 			<div class="logo">
@@ -27,19 +28,25 @@
 			<img src="images/UI/bookmark.svg" class="bookmark">
 		</nav>
 	</header>
-	<main role="main">
 	<section class="section-part1">
 			<div class="navbar">
-				<label for="nav-toggle" class="nav-toggle" onclick><img src="images/UI/burger.svg" class="burger__img"></label>
-				<ul>
-   					<li><a href="#1">Один</a></li>
-   					<li><a href="#2">Два</a></li>
-   					<li><a href="#3">Три</a></li>
-   					<li><a href="#4">Четыре</a></li>
-   					<li><a href="#5">Пять</a></li>
-   					<li><a href="#6">Шесть</a></li>/
-   					<li><a href="#7">Семь</a> </li>
-				</ul>
+				<label  for="nav-toggle"><img src="images/UI/burger.svg" class="burger__img"></label>
+				<div class="nav-menu">
+					<label for="close">X</label>
+					<ul class="navigation-menu">
+						<li class="navigation-menu__item navigation-menu__item-uppercase" ><a
+						href="#">Головна</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Топ</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Огляди</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Корисні статті</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Новини</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Авторська колонка</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Інтерактив</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Літклуб</a></li>
+					</ul>	
+					</div>	
+					
+					
 			</div>
 			<div class="block-image">
 				<p class="block-image__article block-image__article--uppercase">корисні статті</p>
@@ -84,9 +91,33 @@
 				</div>
 			</div>
 		</div>
+	</section>
+	<section class="section-part3">
+		<div class="block-cards">
+			<div class="block-cards__card1">
+				<p class="card1__text">Корисні статті</p>
+				<img src="images/common/Creatures.png" class="card1__image">
+				
+				<div class="cards-calendar">
+						<img class="block-calendar__imgCalendar" src="images/UI/calendar.svg">
+						<span class="block-calendar__date">1 жовтня, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="block-view__imgView" src="images/UI/eye.svg">
+						<span class="block-view__date">980</span>
+				</div>
+				<p>Найкращі дитячі ілюстратори незалежної України</p>
+			</div>
+			<div class="block-cards__card2">
+				
+			</div>
+			<div class="block-cards__card3">
+				
+			</div>
+		</div>
 		
 	</section>
-</main>
+
 
 	
 </body>
