@@ -197,45 +197,40 @@ label[for="nav-toggle"] {
 }
 
 .block-image {
-	position: relative;
+padding: 32rem 20rem;
 	width: 100%;
-	height: 100vh;	
+	height: auto;
 background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-          url("images/common/bearBears.jpg") 100% 100% no-repeat;
-           background-size: cover;	
+          url("images/common/bearBears.jpg") no-repeat;
+	background-size: cover;
+	position: 50% 50%;
 }
 
 
 .block-image__article {
-	position: absolute;
-	top: 200px;
-	left: 140px;
 	font-family: Lora-Regular;
 	font-size: 1.8rem;
 	color: #FBBC16;
 	font-weight: bold;
+	padding-bottom: 3rem;
 }
 
 .block-image__header {
-	position: absolute;
-	top: 240px;
-	left: 140px;
 	font-family: Lora-Regular;
 	font-size: 3.2rem;
 	width: 50%;
 	color: #FFFFFF;
 	font-weight: bold;
+	padding-bottom: 3rem;
 }
 
 .block-date  {
-	position: absolute;
 	width: 25%;
-	top: 350px;
-	left: 140px;
 	display: flex;
 	align-items: center;
 	flex-direction: row;
 	justify-content: space-between;
+	padding-bottom: 3rem;
 }
 
 .block-calendar {
@@ -266,13 +261,11 @@ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
 }
 
 .block-button {
-	position: absolute;
-	top: 400px;
-	left: 140px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 12%;
+	padding-bottom: 3rem;
 }
 
 .block-button__reader {
@@ -297,22 +290,22 @@ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
 
 .img-part2 {
 	width: 45%;
-	height: 50%;
+	height: 40%;
 	border-bottom: 3px solid red;
 	position: absolute;
-	left: 15%;
+	left: 12%;
 	z-index: -1;
 }
 
 .block-card {
 	width: 30%;
-	height: 50%;
+	height: 40%;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	top: 30%;
-	right: 15%;
+	top: 35%;
+	right: 18%;
 	z-index: 1000;
 }
 
@@ -396,13 +389,50 @@ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
 	font-size: 1.8rem;
 	color: #FBBC16;
 	padding-bottom: 20px;
+	text-transform: uppercase;
 }
 
 .card1__image {
+	width: 100%;
+}
+
+.block-card1__information {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 15%;
+
+}
+
+.calendar__date,
+.view {
+	font-family: Lore_Regular;
+	font-size: 1.6rem;
+}
+
+.block-card__image {
+	position: relative;
 	width: 30%;
 }
 
-.cards-calendar {
+.card1__bookmark {
 	position: absolute;
-	top: 100px;
+	right: 5%;
+	bottom: -5%;
+}
+
+.cards-calendar,
+.cards-view {
+	display: flex;
+	align-items: center;
+	margin: 10px 0;
+	
+
+}
+
+.cards-calendar img,
+.cards-view img{
+	margin-right: 10px;
+	
+
 }
