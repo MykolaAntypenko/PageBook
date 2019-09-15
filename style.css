@@ -4,7 +4,7 @@
 	font-size: 10px;
 }
 
-
+/*header start*/
 header {
 	position: relative;
 	z-index: 9999;
@@ -212,7 +212,8 @@ label[for="nav-toggle"] {
 	display: block;
 	padding: 20px;
 }
-
+/*header end*/
+/*content start*/
 .block-background{
 	height: auto;
 	position: relative;
@@ -729,7 +730,8 @@ label[for="nav-toggle"] {
 	color: #000000;
 	margin-left: 10px;
 }
-
+/*content 
+/*footer start*/
 .footer {
 	width: 100%;
 	position: relative;
@@ -796,6 +798,7 @@ label[for="nav-toggle"] {
 	color: #959595;
 	text-align: justify;
 }
+/*footer end*/
 
 /*media queries*/
 @media (max-width: 1360px) {
@@ -846,13 +849,15 @@ label[for="nav-toggle"] {
 	.block-card1__information{
 		flex-direction: column;
 	}
-.cards-calendar,
-.cards-view {
+	.cards-calendar,
+	.cards-view {
 	width: 100%;
-}
+	}
+
+
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
 	.block-information__text {
 	font-family: Lora-Bold;
 	font-size: 2rem;
@@ -860,5 +865,9 @@ label[for="nav-toggle"] {
 	width: 120%;
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+
+.blockpart6-information__text {
+	font-size: 2rem;
 }
 }
