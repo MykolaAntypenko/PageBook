@@ -5,17 +5,19 @@
 	<title>PageBook</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="fonts.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width">
 </head>
 <body>
-	<input type="checkbox" id="nav-toggle" hidden>
-	<input type="checkbox" id="close" hidden>
+	<input type="radio" id="nav-toggle" hidden name="menu">
+	<input type="radio" id="close" hidden name="menu">
 	<header>
 		<div class="left_header">
 			<div class="logo">
 				<img src="images/Logo.svg" alt="BOKMAI" class="logo-img">
 			</div>
-			<div class="for_all">
-				<a href="#" class="for_all-menu">Для усіх&nbsp;&nbsp;</a>	
+			<div class="for_all" id="menu_body">
+				<a href="#" class="for_all-menu">Для усіх&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 			</div>
 		</div>
 		<nav class="right-menu">
@@ -44,26 +46,29 @@
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Інтерактив</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Літклуб</a></li>
 					</ul>	
-					</div>	
-					
-					
+					</div>		
 			</div>
 			<div class="block-image">
-				<p class="block-image__article block-image__article--uppercase">корисні статті</p>
-				<p class="block-image__header">Дітям про тварин: любити, знати, захищати</p>
-				<div class="block-date">
-					<div class="block-calendar">
-						<img class="block-calendar__imgCalendar" src="images/UI/calendar-grey.svg">
-						<span class="block-calendar__date">1 жовтня, 2017</span>
+				<div class="block-background">
+					<img src="images/common/bearBears.jpg" class="block-background__image">
+					<div class="block-background__content">	
+						<p class="block-image__article block-image__article--uppercase">корисні статті</p>
+						<p class="block-image__header">Дітям про тварин: любити, знати, захищати</p>
+						<div class="block-date">
+							<div class="block-calendar">
+								<img class="block-calendar__imgCalendar" src="images/UI/calendar-grey.svg">
+								<span class="block-calendar__date">1 жовтня, 2017</span>
+							</div>
+							<div class="block-view">
+								<img class="block-view__imgView" src="images/UI/eye-grey.svg">
+								<span class="block-view__date">980</span>
+							</div>
+						</div>
+						<div class="block-button">
+							<a href="#" class="block-button__reader">Читати</a>
+							<img src="images/UI/bookmark_big.svg">
+						</div>
 					</div>
-					<div class="block-view">
-						<img class="block-view__imgView" src="images/UI/eye-grey.svg">
-						<span class="block-view__date">980</span>
-					</div>
-				</div>
-				<div class="block-button">
-					<a href="#" class="block-button__reader">Читати</a>
-					<img src="images/UI/bookmark_big.svg">
 				</div>
 			</div>
 	</section>
@@ -101,26 +106,249 @@
 					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
 				</div>
 				<div class="block-card1__information">
-				<div class="cards-calendar">
+					<div class="cards-calendar">
 						<img class="cards-calendar__img" src="images/UI/calendar.svg">
 						<span class="calendar__date">1 жовтня, 2017</span>
 					</div>
 					<div class="cards-view">
 						<img class="cards-view__img" src="images/UI/eye.svg">
 						<span class="view">980</span>
+					</div>
 				</div>
-				</div>
-				<p>Найкращі дитячі ілюстратори незалежної України</p>
+				<p class="cards__maintext">Найкращі дитячі ілюстратори незалежної України</p>
 			</div>
 			<div class="block-cards__card2">
-				
+				<p class="card1__text">Афіша</p>
+				<div class="block-card__image">
+					<img src="images/common/Seasons.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">22 вересня, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">145</span>
+					</div>
+				</div>
+				<p class="cards__maintext">Вихідні з дітьми: 9-10 вересня</p>
 			</div>
 			<div class="block-cards__card3">
-				
+				<p class="card1__text">Літклуб</p>
+				<div class="block-card__image">
+					<img src="images/common/Relations.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">28 листопада, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">2045</span>
+					</div>
+				</div>
+				<p class="cards__maintext">Літклуб Букмоль: розклад на квітень</p>
 			</div>
 		</div>
-		
 	</section>
+	<section class="section-part4">
+		<p class="section-part4__header">Поради</p>
+		<div class="block-part4">
+			<img src="images/common/cute-brain-cartoon.jpg" class="block-part4__image">
+			<div class="block-part4__information">
+				<div class="block-information__content">
+					<span class="block-information__date">
+						<img src="images/UI/calendar.svg">
+						<span>28 вересня</span>
+					</span>
+					<span class="block-information__view">
+						<img src="images/UI/eye.svg">
+						<span>2045</span>
+					</span>
+				</div>
+				<p class="blockpart4-information__text">«Любий щоденнику...»: ваш «настільний» психоаналітик</p>
+				<div class="button-read">
+					<a href="#" class="block-button__reader">Читати</a>
+				</div>
+				<div class="blockpart4-information__bookmark">
+					<img src="images/UI/bookmark_big.svg">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section-part5">
+		<div class="block-cards">
+			<div class="block-cards__card1">
+				<p class="card1__text">Огляди</p>
+				<div class="block-card__image">
+					<img src="images/common/Book.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">28 Вересня, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">2045</span>
+					</div>
+				</div>
+				<p class="cards__maintext">«Поміж сірих сутінків» Рути Шепетіс: на противагу зброї</p>
+			</div>
+			<div class="block-cards__card2">
+				<p class="card1__text">Новини</p>
+				<div class="block-card__image">
+					<img src="images/common/Knowledge.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">8 Листопада, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">3045</span>
+					</div>
+				</div>
+				<p class="cards__maintext">У столиці запустили соціальний проект «Київ читає»</p>
+			</div>
+			<div class="block-cards__card3">
+				<p class="card1__text">Фільми</p>
+				<div class="block-card__image">
+					<img src="images/common/photo.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">28 Вересня, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">6345</span>
+					</div>
+				</div>
+				<p class="cards__maintext">12 фільмів для дітей, знятих за мотивами відомих книжок</p>
+			</div>
+		</div>
+	</section>
+		<section class="section-part6">
+				<div class="blockpart6-card">
+			<p class="blockpart6-text--uppercase">Авторська колонка</p>
+			<div class="blockpart6-information">
+				<div class="blockpart6-information__content">
+					<span class="blockpart6-information__date">
+						<img src="images/UI/calendar.svg">
+						<span>22 вересня,2017</span>
+					</span>
+					<span class="blockpart6-information__view">
+						<img src="images/UI/eye.svg">
+						<span>3045</span>
+					</span>
+				</div>
+				<p class="blockpart6-information__text">Бути собою разом із Туве Янссон: 5 диваків Долини мумі-тролів</p>
+				<div class="buttonpart6-read">
+					<a href="#" class="block-button__reader">Читати</a>
+				</div>
+				<div class="blockpart6-information__bookmark">
+					<img src="images/UI/bookmark_big.svg">
+				</div>
+			</div>
+		</div>
+		<img src="images/common/beavers.jpg" class="img-part6">
+	
+	</section>
+	<section class="section-part7">
+		<div class="block-cards">
+			<div class="block-cards__card1">
+				<p class="card1__text">Огляди</p>
+				<div class="block-card__image">
+					<img src="images/common/Relations.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">15 Вересня, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">569</span>
+					</div>
+				</div>
+				<p class="cards__maintext">Альтернативна історія: 4 аніме серіали, які граються з подіями ХХ століття</p>
+			</div>
+			<div class="block-cards__card2">
+				<p class="card1__text">Афіша</p>
+				<div class="block-card__image">
+					<img src="images/common/Gallery.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">28 Вересня, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">2045</span>
+					</div>
+				</div>
+				<p class="cards__maintext">Вихідні з дітьми: 9-10 вересня</p>
+			</div>
+			<div class="block-cards__card3">
+				<p class="card1__text">Корисні статті</p>
+				<div class="block-card__image">
+					<img src="images/common/Art.png" class="card1__image">
+					<img src="images/UI/bookmark_big.svg" class="card1__bookmark">
+				</div>
+				<div class="block-card1__information">
+					<div class="cards-calendar">
+						<img class="cards-calendar__img" src="images/UI/calendar.svg">
+						<span class="calendar__date">28 Вересня, 2017</span>
+					</div>
+					<div class="cards-view">
+						<img class="cards-view__img" src="images/UI/eye.svg">
+						<span class="view">2045</span>
+					</div>
+				</div>
+				<p class="cards__maintext">Літклуб Букмоль: розклад на квітень</p>
+			</div>
+		</div>
+	</section>
+	<div class="block-showmore">	
+		<img src="images/UI/rotate.svg">
+		<p class="block-showmore__text">Показати ще</p>
+	</div>
+	<footer class="footer">
+		<div class="footer__email">	
+			<p class="footer__email-text">Підписуйтесь на новини від Bokmal</p>
+			<p class="footer__email-sign">E-Mail</p>
+			<input type="email" name="email" id="footer_email">
+			<a href="#"><img src="images/UI/arrow.svg"></a>
+		</div>
+		<div class="footer__social">
+			<p class="footer__social-text" style="text-align:center">Ми є у соціальних мережах</p>
+			<div class="social">	
+				<a href="#"><img src="images/Social/facebook.svg"></a>	
+				<a href="#"><img src="images/Social/twitter.svg"></a>	
+				<a href="#"><img src="images/Social/instagram.svg"></a>
+			</div>	
+		</div>
+		<div class="footer__about">	
+			<p class="footer__about-text">&#169;&nbsp;2017 Букмоль. Незалежний культурний проект для дітей, їхніх батьків та усіх-усіх небайдужих й охочих до читання. Всі права захищені. Використання будь-яких матеріалів, розміщених на сайті, дозволяється за умови посилання на Bokmal.com.ua</p> 
+		</div>
+	</footer>
+
+
+		
+	</footer>
 
 
 	
