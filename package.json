@@ -1,0 +1,40 @@
+{
+  "name": "pagebook-with-webpack",
+  "version": "1.0.0",
+  "description": "PageBook project with webpack",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch",
+    "server": "webpack-dev-server",
+    "git": "git add . git commit -m",
+    "postgit": "git push origin master"
+  },
+  "author": "Mykola Antypenko",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "file-loader": "^4.2.0",
+    "jest": "^24.9.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.0.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.6.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-js-concat-plugin": "^0.2.0"
+  }
+}
