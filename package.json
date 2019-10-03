@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack --watch",
     "server": "webpack-dev-server",
-    "git": "git add . git commit -m",
+    "git": "git add . && git commit -m",
     "postgit": "git push origin master"
   },
   "author": "Mykola Antypenko",

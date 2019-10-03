@@ -3,8 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PageBook</title>
-	<link rel="stylesheet" href="dist/style.css">
-	<link rel="stylesheet" href="dist/fonts.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width">
 </head>
@@ -55,9 +53,9 @@
 						href="#">Головна</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Топ</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Огляди</a></li>
-						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Корисні статті</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Статті</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Новини</a></li>
-						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Авторська колонка</a></li>
+						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Колонка</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Інтерактив</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Літклуб</a></li>
 					</ul>	
@@ -89,8 +87,8 @@
 	</section>
 	<div class="block-sorting">
 		<span>Сортувати за: </span>
-		<a class="sort-popular" id="popular">Популярністю</a>
-		<a class="sort-new">Новизною</a>
+		<button class="sort-popular" id="lol">Популярністю</button>
+		<button class="sort-new">Новизною</button>
 	</div>
 	<div class="main-content">
 	<section class="section-part2 blocks" data-view = "32">
@@ -121,9 +119,11 @@
 	<section class="section-part3">
 		<div class="block-cards">
 			<div class="block-cards__card1 blocks" data-view = "980">
-				<p class="card1__text">Корисні статті</p>
+							<p class="card1__text">Корисні статті</p>
 				<div class="block-card__image">
+					<a href="#fill_success">
 					<img src="../images/common/Creatures.png" class="card1__image">
+				</a>
 					<img src="../images/UI/bookmark_big.svg" class="card1__bookmark">
 				</div>
 				<div class="block-card1__information">
@@ -137,11 +137,20 @@
 					</div>
 				</div>
 				<p class="cards__maintext">Найкращі дитячі ілюстратори незалежної України</p>
-			</div>
+		</div>
+			<a href="#x" class="overlay" id="fill_success"></a>
+        <div class="popup">
+            <h1>Найкращі дитячі ілюстратори незалежної України</h1>
+            <img src="../images/common/Creatures.png" class="confirmation">
+            <p>Згадки про сучасних найвідоміших у світі дитячих письменників усе частіше з’являються в українському культурному просторі. Перекладних книжок виходить більше й більше. Однак із художниками справи гірші. Їхня творчість залишається здебільшого об’єктом приватних професійних зацікавлень тих чи інших читачів і представників нашого книжкового світу. Премія Андерсена дає чудову можливість компактно познайомитися з тими обраними художниками світового рівня, які щороку представляють свої країни.</p>
+            <a class="close" title="Закрыть" href="#close"></a>
+        </div>  
 			<div class="block-cards__card2 blocks" data-view = "145">
 				<p class="card1__text">Афіша</p>
 				<div class="block-card__image">
+					<a href="#fill_success">
 					<img src="../images/common/Seasons.png" class="card1__image">
+				</a>
 					<img src="../images/UI/bookmark_big.svg" class="card1__bookmark">
 				</div>
 				<div class="block-card1__information">
@@ -156,10 +165,19 @@
 				</div>
 				<p class="cards__maintext">Вихідні з дітьми: 9-10 вересня</p>
 			</div>
+				<a href="#x" class="overlay" id="fill_success"></a>
+        <div class="popup">
+            <h1>Найкращі дитячі ілюстратори незалежної України</h1>
+            <img src="../images/common/Creatures.png" class="confirmation">
+            <p>Згадки про сучасних найвідоміших у світі дитячих письменників усе частіше з’являються в українському культурному просторі. Перекладних книжок виходить більше й більше. Однак із художниками справи гірші. Їхня творчість залишається здебільшого об’єктом приватних професійних зацікавлень тих чи інших читачів і представників нашого книжкового світу. Премія Андерсена дає чудову можливість компактно познайомитися з тими обраними художниками світового рівня, які щороку представляють свої країни.</p>
+            <a class="close" title="Закрыть" href="#close"></a>
+        </div>  
 			<div class="block-cards__card3 blocks" data-view = "2045">
 				<p class="card1__text">Літклуб</p>
 				<div class="block-card__image">
+					<a href="#fill_success">
 					<img src="../images/common/Relations.png" class="card1__image">
+				</a>
 					<img src="../images/UI/bookmark_big.svg" class="card1__bookmark">
 				</div>
 				<div class="block-card1__information">
@@ -174,6 +192,13 @@
 				</div>
 				<p class="cards__maintext">Літклуб Букмоль: розклад на квітень</p>
 			</div>
+				<a href="#x" class="overlay" id="fill_success"></a>
+        <div class="popup">
+            <h1>Найкращі дитячі ілюстратори незалежної України</h1>
+            <img src="../images/common/Creatures.png" class="confirmation">
+            <p>Згадки про сучасних найвідоміших у світі дитячих письменників усе частіше з’являються в українському культурному просторі. Перекладних книжок виходить більше й більше. Однак із художниками справи гірші. Їхня творчість залишається здебільшого об’єктом приватних професійних зацікавлень тих чи інших читачів і представників нашого книжкового світу. Премія Андерсена дає чудову можливість компактно познайомитися з тими обраними художниками світового рівня, які щороку представляють свої країни.</p>
+            <a class="close" title="Закрыть" href="#close"></a>
+        </div>  
 		</div>
 	</section>
 	<section class="section-part4 blocks" data-view = "2045">
@@ -370,6 +395,5 @@
 		</div>
 	</footer>
 </body>
-	<script type="text/javascript" src="dist/bundle.js"></script>
-
+	<script type="text/javascript" src="./bundle.js"></script>
 </html>

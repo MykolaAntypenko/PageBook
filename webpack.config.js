@@ -1,16 +1,17 @@
 const path = require('path');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+// const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ConcatPlugin = require('webpack-js-concat-plugin');
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: './src/index.js',
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname),
         filename: 'bundle.js'
     },
     devServer: {  // configuration for webpack-dev-server
       contentBase: './',  //source of static assets
-      port: 7700, // port to run dev-server
+      port: 3000, // port to run dev-server,
+      open: true
   } ,
     module: {
         rules: [{
@@ -62,7 +63,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new UglifyJsPlugin(),
         new ConcatPlugin()
     ]
 };

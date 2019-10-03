@@ -1,6 +1,7 @@
 // sort by popular
 
 function sortable(cls, attr) {
+  console.log("lol in func");
         var elements = document.querySelectorAll(cls),
             len = elements.length,
             parent = document.querySelector('.main-content'),
@@ -22,14 +23,14 @@ function sortable(cls, attr) {
             parent.style.width = "65%";
             parent.style.margin = "0 auto";
         }
-
+          console.log("Correct work")
       }
+
+      
 
       
 
 
 
 
-export {
- sortable
-}
+export {sortable}; 
