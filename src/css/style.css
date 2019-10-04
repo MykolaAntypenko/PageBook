@@ -365,7 +365,6 @@ label[for="nav-toggle"] {
 /*header end*/
 /*content start*/
 .block-background{
-	height: 80vh;
 	position: relative;
 	width: auto;
 }
@@ -466,13 +465,14 @@ label[for="nav-toggle"] {
 
 .block-sorting {
 	margin-left: 10%;
-	margin-top: 50px; 
+	margin-top: 30px; 
 }
 
 .block-sorting span {
 	font-family: ProximaNova-Semibold;
 	font-size: 2rem;
-	color: lightgrey;
+	color: #424141;
+	font-weight: bold;
 	padding-right: 10px;
 	padding-left: 10px;
 }
@@ -480,23 +480,45 @@ label[for="nav-toggle"] {
 	text-decoration: none;
 	font-family: ProximaNova-Semibold;
 	font-size: 2rem;
-	color: lightgrey;
+	color: #424141;
 	padding-right: 10px;
 	padding-left: 10px;
 	cursor: pointer;
 }
 
-.block-sorting .sort-popular {
-	border-right: 2px solid lightgrey;
+
+.block-sorting .sort-popular,
+.block-sorting .sort-new,
+.block-sorting .sort-reject {
+	border: none;
+	background-color: #FFFFFF;
+	color: #424141;
+	font-family: ProximaNova-Semibold;
+	font-size: 2rem;
+	padding: 0 15px;
+	cursor: pointer;
+}
+
+.block-sorting .sort-popular:hover,
+.block-sorting .sort-new:hover,
+.block-sorting .sort-reject:hover {
+	color: #FBBC16;
+}
+
+.block-sorting .sort-popular,
+.block-sorting .sort-new
+ {
+	border-right: 2px solid #424141;
 }
 
 .section-part2 {
-	height: 100vh;
+	height: 500px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	
 }
 
 .img-part2 {
@@ -1066,7 +1088,6 @@ label[for="close"] {
 }
 
 .block-background{
-	height: 70vh;
 	width: auto;
 }
 	.block-information__text {
@@ -1250,7 +1271,7 @@ span.block-view__date {
 	}
 
 	.block-background {
-	height: 60vh;
+
 	position: relative;
 	width: auto;
 }
@@ -1392,7 +1413,6 @@ display: flex;
 
 @media (max-width: 700px) {
    .block-background{
-	height: 50vh;
 	position: relative;
 	width: auto;
 }
