@@ -60,81 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(1);
-
-var _sorting = __webpack_require__(6);
-
-var _animation = __webpack_require__(7);
-
-var sort = document.getElementById("lol");
-
-sort.addEventListener("click", function () {
-	return (0, _sorting.sortable)(".blocks", "data-views");
-});
-
-var menu = document.querySelector("#nav-toggle");
-menu.addEventListener("change", _animation.animation_menu);
-
-var close = document.querySelector("#close");
-close.addEventListener("change", _animation.animation_close);
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(2);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(4)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./style.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, "* {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tfont-size: 10px;\r\n}\r\n\r\n.overlay {\r\ntop: 0;\r\nright: 0;\r\nbottom: 0;\r\nleft: 0;\r\nz-index: 9999;\r\nvisibility: hidden;\r\nbackground-color: rgba(0, 0, 0, 0.7);\r\nopacity: 0;\r\nposition: fixed; \r\ncursor: default; \r\n}\r\n\r\n.overlay:target {\r\nvisibility: visible;\r\nopacity: 1;\r\n-webkit-transition: all 0.6s;\r\n-moz-transition: all 0.6s;\r\n-ms-transition: all 0.6s;\r\n-o-transition: all 0.6s;\r\ntransition: all 0.6s;\r\n}\r\n\r\n\r\n.popup {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\ntop: 0;\r\nright: 0;\r\nleft: 50%;\r\nfont-size: 14px;\r\nz-index: 10000;\r\nmargin: 0 auto;\r\nwidth: 100%;\r\nmin-width: 320px;\r\nmax-width: 820px;\r\nposition: fixed;\r\npadding: 30px;\r\nborder: 1px solid #383838;\r\n-webkit-border-radius: 10px;\r\n-moz-border-radius: 10px;\r\n-ms-border-radius: 10px;\r\nborder-radius: 10px;\r\nbackground-color: #FFFFFF;\r\n-webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-ms-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-o-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\nbox-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-webkit-transform: translate(-50%, -150%);\r\n-ms-transform: translate(-50%, -150%);\r\n-o-transform: translate(-50%, -150%);\r\ntransform: translate(-50%, -150%);\r\n}\r\n.overlay:target + .popup {\r\ntop: 50%;\r\n-webkit-transform: translate(-50%,-50%);\r\n-ms-transform: translate(-50%, -50%);\r\n-o-transform: translate(-50%, -50%);\r\ntransform: translate(-50%, -50%);\r\n-webkit-transition: transform 0.6s ease-out;\r\n-moz-transition: transform 0.6s ease-out;\r\n-ms-transition: transform 0.6s ease-out;\r\n-o-transition: transform 0.6s ease-out;\r\ntransition: transform 0.6s ease-out;\r\n}\r\n\r\n.close {\r\nposition: absolute;\r\npadding: 0;\r\ntop: -10px;\r\nright: -10px;\r\nwidth: 22px;\r\nheight: 22px;\r\nborder: 2px solid #ccc;\r\n-webkit-border-radius: 50%;\r\n-moz-border-radius: 50%;\r\n-ms-border-radius: 50%;\r\n-o-border-radius: 50%;\r\nborder-radius: 50%;\r\nbackground-color: rgba(61, 61, 61, 0.8);\r\n-webkit-box-shadow: 0px 0px 10px #000;\r\n-moz-box-shadow: 0px 0px 10px #000;\r\nbox-shadow: 0px 0px 10px #000;\r\ntext-align: center;\r\ntext-decoration: none;\r\nfont-weight: bold;\r\nline-height: 20px;\r\n-webkit-transition: all ease .8s;\r\n-moz-transition: all ease .8s;\r\n-ms-transition: all ease .8s;\r\n -o-transition: all ease .8s;\r\n transition: all ease .8s;\r\n}\r\n.close:before {\r\ncolor: rgba(255, 255, 255, 0.9);\r\ncontent: '\\2715';\r\ntext-shadow: 0 -1px rgba(0, 0, 0, 0.9);\r\nfont-size: 16px;\r\n}\r\n.close:hover {\r\nbackground-color: #C8CCC9;\r\nborder-color: #000000;\r\ncolor: #000000;\r\n-webkit-transform: rotate(180deg);\r\n-moz-transform: rotate(180deg);\r\n-ms-transform: rotate(180deg);\r\n-o-transform: rotate(180deg);\r\ntransform: rotate(180deg);\r\n}\r\n.popup h1 {\r\nwidth: 80%;\r\nfont-size: 24px;\r\n}\r\n\r\n \r\n@media only screen and (min-width: 768px) and (max-width: 959px) {\r\n  .popup {\r\n    width: 95%;\r\n  }\r\n}\r\n \r\n@media only screen and (min-width: 320px) and (max-width: 767px) {\r\n  .popup {\r\n    width:85%;\r\n  }\r\n}\r\n\r\n.confirmation {\r\n  width: 40%;\r\n}\r\n\r\n/*header start*/\r\nheader {\r\n\tposition: relative;\r\n\tz-index: 99999;\r\n\tborder-bottom: 1px solid lightgrey;\r\n}\r\n\r\n.left_header {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: flex-start;\r\n\r\n}\r\n\r\n.logo {\r\n\twidth: 10%;\r\n\theight: 20%;\r\n\tposition: relative;\r\n}\r\n\r\n.logo-img {\r\n\twidth: auto;\r\n\tpadding: 20px;\r\n\tborder-right: 2px solid lightgrey;\r\n}\r\n\r\n.for_all { \r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tmargin-left: 30px;\r\n\tflex-direction: column;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n\ttext-align: center;\r\n}\r\n\r\n\r\n.for_all-menu {\r\n\tbackground-color: #FBBC16;\r\n\ttext-decoration: none;\r\n\tcolor: #000000;\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-weight: bold;\r\n\tfont-size: 1.8rem;\r\n\tpadding: 5px 15px;\r\n\tborder-radius: 20px;\r\n}\r\n\r\n.for_all-menu:hover ~ #sub_menu {\r\n\tdisplay: flex;\r\n\twidth: 200px;\r\n}\r\n\r\n.right-menu {\r\n\tdisplay: flex;\r\n\tjustify-content: flex-end;\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: 0;\r\n}\r\n\r\n.right-menu__list {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tlist-style-type: none;\r\n\tpadding: 20px;\r\n\tborder-right: 2px solid lightgrey;\r\n}\r\n\r\n.right-menu__list .right-menu__list--item a {\r\n\tfont-size: 1.4rem;\r\n\tfont-family: Lora-Regular;\r\n\tfont-weight: bold;\r\n\ttext-decoration: none;\r\n\tpadding: 10px;\r\n\tcolor: #000000;\r\n\tfont-weight: bold;\r\n}\r\n\r\n.magnifier,\r\n.bookmark {\r\n\tborder:none;\r\n\tpadding: 20px;\r\n}\r\n\r\n.menu-mobile {\r\n\tdisplay: none;\r\n}\r\n\r\n.section-part1 {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n}\r\n\r\n.navbar {\r\n\theight: 100vh;\r\n\ttop: 0;\r\n\twidth: 5%;\r\n\tposition: fixed;\r\n\tbackground-color: #FFFFFF;\r\n\tz-index: 999; \r\n\tpadding-top: 60px;\r\n}\r\n\r\n.navigation-menu {\r\n\tdisplay: none;\r\n\tposition: relative;\r\n\tleft: -60px;\r\n}\r\n\r\n.navigation-menu__item-uppercase {\r\n\ttext-transform: uppercase;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar .nav-menu .navigation-menu {\r\n\tdisplay: flex;\r\n\tjustify-content: flex-start;\r\n\tflex-direction: column;\r\n\r\n}\r\n\r\n.nav-menu {\r\n\tdisplay: flex;\r\nflex-direction: row;\r\njustify-content: flex-start;\r\nwidth: 100%;\r\n}\r\n\r\n.nav-menu label {\r\n\tmargin-top: 60px;\r\n\tfont-size: 2.2rem;\r\n\tpadding-top: 20px;\r\n\tpadding-left: 20px;\r\n\tfont-family: ProximaNova-Semibold;\r\n}\r\n\r\nlabel[for=\"close\"] {\r\n\tcursor: pointer;\r\n}\r\n\r\n.nav-menu .navigation-menu {\r\n\talign-self: center;\r\n\twidth: 100%;\r\n\tmargin-left: 30%;\r\n}\r\n\r\n\r\n.nav-menu .navigation-menu a {\r\n\ttext-align: left;\r\n}\r\n\r\n.nav-menu .navigation-menu a:before {\r\n\tcontent: \" \";\r\n\twidth: 30px;\r\n\theight: 3px;\r\n\tbackground: #FBBC16;\r\n\tdisplay: block;\r\n\topacity: 0;\r\n\tmargin: 0 0 -10px -50px;\r\n}\r\n\r\n.nav-menu .navigation-menu a:hover:before {\r\n\topacity: 1;\r\n}\r\n\r\n.section-part1 .navbar .nav-menu label {\r\n\tdisplay: none;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar .nav-menu label {\r\n\tdisplay: block;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar  label .burger__img {\r\n\tdisplay: none;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar {\r\n\tdisplay: flex;\r\n\tposition: fixed;\r\nz-index: 999;\r\n}\r\n\r\n\r\n\r\nlabel[for=\"close\"]:hover {\r\n\tcolor: #FBBC16;\r\n}\r\n\r\n\r\n.navigation-menu {\r\n\tlist-style-type: none;\r\n}\r\n\r\n.navigation-menu__item {\r\n\tpadding-bottom: 30px;\r\n\r\n} \r\n\r\n.navbar .nav-menu label {\r\n\tposition: relative;\r\n\ttop: -50px;\r\n}\r\n\r\n\r\n.navigation-menu__item a{\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-size: 1.8rem;\r\n\tcolor: #000000;\r\n} \r\n\r\n.navbar a {\r\n\ttext-decoration: none;\r\n}\r\n\r\nlabel[for=\"nav-toggle\"] {\r\n\tcursor: pointer;\r\n}\r\n\r\n.burger__img {\r\n\tdisplay: block;\r\n\tpadding: 20px;\r\n}\r\n/*header end*/\r\n/*content start*/\r\n.block-background{\r\n\theight: 80vh;\r\n\tposition: relative;\r\n\twidth: auto;\r\n}\r\n\r\n.block-background__image {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tz-index: -1;\r\n\tposition: relative;\r\n}\r\n\r\n.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 150px;\r\n\tmargin-left: 100px;\r\n\theight: auto;\r\n}\r\n\r\n.block-image {\r\n\twidth: 95%;\r\n\theight: auto;\r\n\tmargin-left: 5%;\r\n\tposition: relative;\r\n}\r\n\r\n\r\n.block-image__article {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.8rem;\r\n\tcolor: #FBBC16;\r\n\tfont-weight: bold;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-image__header {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 3.2rem;\r\n\twidth: 80%;\r\n\tcolor: #FFFFFF;\r\n\tfont-weight: bold;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-date  {\r\n\twidth: 40%;\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-calendar {\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n}\r\n\r\n.block-view {\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n}\r\n\r\n.block-date img {\r\n\twidth: 20px;\r\n\theight: 20px;\r\n}\r\n\r\n.block-date span {\r\n\tdisplay: inline-block;\r\n\tmargin: 0px 15px;\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.6rem;\r\n\tcolor: #FFFFFF;\r\n}\r\n\r\n.block-image__article--uppercase {\r\n\ttext-transform: uppercase;\r\n}\r\n\r\n.block-button {\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\talign-items: center;\r\n\twidth: 15%;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-button__reader {\r\n\ttext-decoration: none;\r\n\tbackground-color: #FBBC16;\r\n\tpadding: 10px 25px;\r\n\tcolor: #000000;\r\n\tfont-family: ProximaNova-Extrabld;\r\n\tfont-size: 1.6rem; \r\n\tborder-radius: 20px;\r\n\tmargin-right: 30px;\r\n}\r\n\r\n.block-sorting {\r\n\tmargin-left: 10%;\r\n\tmargin-top: 50px; \r\n}\r\n\r\n.block-sorting span {\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-size: 2rem;\r\n\tcolor: lightgrey;\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n.block-sorting a {\r\n\ttext-decoration: none;\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-size: 2rem;\r\n\tcolor: lightgrey;\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.block-sorting .sort-popular {\r\n\tborder-right: 2px solid lightgrey;\r\n}\r\n\r\n.section-part2 {\r\n\theight: 100vh;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tposition: relative;\r\n}\r\n\r\n.img-part2 {\r\n\twidth: 45%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: absolute;\r\n\tleft: 10%;\r\n\tz-index: -1;\r\n}\r\n\r\n.block-card {\r\n\twidth: 30%;\r\n\theight: 45%;\r\n\tposition: relative;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tposition: absolute;\r\n\ttop: 35%;\r\n\tright: 18%;\r\n\tz-index: 1000;\r\n}\r\n\r\n\r\n.block-information {\r\n\tborder:1px solid #000000;\r\n\theight: 90%;\r\n\tbackground-color: #FFFFFF;\r\n\tpadding-left: 30px; \r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.block-text--uppercase {\r\n\ttext-transform: uppercase;\r\n\tcolor: #FBBC16;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tdisplay: flex;\r\n\tjustify-content: flex-end;\r\n}\r\n\r\n.block-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2.6rem;\r\n\tcolor: #716E6E;\r\n\twidth: 90%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.block-information__text:before {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 10%;\r\n\tborder-top: 3px solid red;\r\n\tposition: absolute;\r\n\tleft: -5%;\r\n}\r\n\r\n.block-information__content {\r\n\tpadding: 20px 0;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tposition: relative;\r\n}\r\n\r\n\r\n\r\n.block-information__date {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 2rem;\r\n}\r\n\r\n.block-information__date img,\r\n.block-information__date span,\r\n.block-information__view img,\r\n.block-information__view span {\r\n\tpadding: 0 5px;\r\n}\r\n\r\n.block-information__view {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tmargin-left: 60px;\r\n}\r\n\r\n.block-information__date span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.block-information__view span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.button-read {\r\n\tpadding-top: 20px;\r\n\tposition: relative;\r\n\tbottom: 1rem;\r\n}\r\n\r\n.block-information__bookmark {\r\n\tposition: absolute;\r\n\tbottom: -5%;\r\n\tright: 5%;\r\n}\r\n\r\n\r\n.block-cards {\r\n\tdisplay: grid;\r\n\twidth: 80%;\r\n\tgrid-template-columns: [col1start] 1fr [col1end] 5% \r\n                           [col2start] 1fr [col2end] 5%\r\n                            [col3start] 1fr [col3end];\r\n    grid-template-rows: [row1start] 1fr [row1end];\r\n    margin-left: 10%;\r\n}\r\n\r\n.block-cards__card1 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card2 {\r\n\t grid-column: col2start / col2end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card3 {\r\n\t grid-column: col3start / col3end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.card1__text {\r\n\tfont-family: Lore_Regular;\r\n\tfont-size: 1.8rem;\r\n\tcolor: #FBBC16;\r\n\tpadding-bottom: 20px;\r\n\ttext-transform: uppercase;\r\n}\r\n\r\n.card1__image {\r\n\twidth: 100%;\r\n}\r\n\r\n.block-card1__information {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\twidth: 70%;\r\n\r\n}\r\n\r\n.calendar__date,\r\n.view {\r\n\tfont-family: Lore_Regular;\r\n\tfont-size: 1.6rem;\r\n}\r\n\r\n.block-card__image {\r\n\tposition: relative;\r\n}\r\n\r\n.card1__bookmark {\r\n\tposition: absolute;\r\n\tright: 5%;\r\n\tbottom: -5%;\r\n}\r\n\r\n.cards-calendar,\r\n.cards-view {\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tmargin: 10px 0;\r\n\t\r\n\r\n}\r\n\r\n.cards-calendar img,\r\n.cards-view img{\r\n\tmargin-right: 10px;\r\n}\r\n\r\n.cards__maintext {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.8rem;\r\n\tmargin-top: 10px;\r\n}\r\n\r\n.section-part4 {\r\n\twidth: 80%;\r\n\tmargin-left: 10%;\r\n\tmargin-top: 5%;\r\n}\r\n\r\n.block-part4 {\r\n\tbackground-size: cover;\r\n\theight: 430px;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: relative;\r\n}\r\n\r\n.block-part4__image {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n\r\n.section-part4__header {\r\n\ttext-transform: uppercase;\r\n\tcolor: #FBBC16;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tmargin-bottom: 5%;\r\n}\r\n\r\n.block-part4__information {\r\n\tborder:1px solid #000000;\r\n\theight: 55%;\r\n\tbackground-color: #FFFFFF;\r\n\tpadding-left: 30px; \r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n\twidth: 50%;\r\n\tposition: absolute;\r\n\tleft: 3%;\r\n\ttop: 15%;\r\n}\r\n\r\n.blockpart4-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2.6rem;\r\n\tcolor: #716E6E;\r\n\twidth: 80%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart4-information__bookmark {\r\n\tposition: absolute;\r\n\tright: 5%;\r\n\tbottom: -5%;\r\n}\r\n\r\n.blockpart4-information__text:before {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 6%;\r\n\tborder-top: 3px solid red;\r\n\tposition: absolute;\r\n\tleft: -3%;\r\n}\r\n\r\n.section-part5,\r\n.section-part7 {\r\n\tmargin-top: 5%;\r\n}\r\n\r\n.section-part6 {\r\n\twidth: 90%;\r\n\theight: 500px;\r\n\tmargin-left: 10%;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tposition: relative;\r\n}\r\n\r\n.img-part6 {\r\n\twidth: 45%;\r\n\theight: 50%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: absolute;\r\n\tright: 10%;\r\n\tz-index: -1;\r\n}\r\n\r\n.blockpart6-card {\r\n\twidth: 40%;\r\n\theight: 50%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tposition: absolute;\r\n\ttop: 20%;\r\n\tleft: 7%;\r\n\tz-index: 1;\r\n}\r\n\r\n\r\n.blockpart6-information {\r\n\tborder:1px solid #000000;\r\n\theight: 90%;\r\n\tbackground-color: #FFFFFF;\r\n\tpadding-left: 30px; \r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart6-text--uppercase {\r\n\ttext-transform: uppercase;\r\n\tcolor: #FBBC16;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tdisplay: flex;\r\n\tjustify-content: flex-start;\r\n\tpadding: 10px 0 20px 0;\r\n}\r\n\r\n.blockpart6-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2.6rem;\r\n\tcolor: #716E6E;\r\n\twidth: 90%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n\tposition: relative;\r\n\ttext-align: right;\r\n}\r\n\r\n.blockpart6-information__text:after {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 6%;\r\n\tborder-top: 3px solid red;\r\n\tposition: absolute;\r\n\ttop: 20px;\r\n\tright: -15%;\r\n}\r\n\r\n.blockpart6-information__content {\r\n\tpadding: 20px 0;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n}\r\n\r\n\r\n\r\n.blockpart6-information__date {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 2rem;\r\n}\r\n\r\n.blockpart6-information__date img,\r\n.blockpart6-information__date span,\r\n.blockpart6-information__view img,\r\n.blockpart6-information__view span {\r\n\tpadding: 0 5px;\r\n}\r\n\r\n.blockpart6-information__view {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tmargin-left: 60px;\r\n}\r\n\r\n.blockpart6-information__date span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.blockpart6-information__view span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.buttonpart6-read {\r\n\tpadding-top: 20px;\r\n\tdisplay: flex;\r\n\tjustify-content: flex-end;\r\n\tpadding-right: 60px;\r\n}\r\n\r\n.blockpart6-information__bookmark {\r\n\tposition: absolute;\r\n\tbottom: -30%;\r\n\tleft: 5%;\r\n}\r\n\r\n.block-showmore {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: center;\r\n\tmargin: 50px 0;\r\n}\r\n\r\n.block-showmore__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.4rem;\r\n\tcolor: #000000;\r\n\tmargin-left: 10px;\r\n}\r\n/*content \r\n/*footer start*/\r\n.footer {\r\n\twidth: 100%;\r\n\tposition: relative;\r\n\tz-index: 9999;\r\n\tbackground: #EBEBEB;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tflex-wrap: wrap;\r\n\tjustify-content: center;\r\n\tpadding: 50px 0;\r\n\r\n}\r\n\r\n.footer__email {\r\n\twidth: 30%;\r\n}\r\n\r\n#footer_email {\r\n\tborder:none;\r\n\tborder-bottom: 2px solid #000000;\r\n\toutline: none;\r\n\tbackground:#EBEBEB; \r\n\theight: 20px;\r\n\twidth: 80%;\r\n}\r\n\r\n.footer__email-text,\r\n.footer__social-text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tcolor: #959595;\r\n\tmargin-bottom: 20px;\r\n}\r\n\r\n.footer__email-sign {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tcolor: #959595;\r\n\tmargin-bottom: 10px;\r\n}\r\n\r\n.footer__social {\r\n\twidth: 30%;\r\n}\r\n\r\n.social {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\talign-items: center;\r\n\twidth: 60%;\r\n\tmargin: 30px auto 0 auto;\r\n}\r\n\r\n.footer__about {\r\n\twidth: 30%;\r\n}\r\n\r\n.footer__about-text {\r\n\twidth: 80%;\r\n\tmargin: 0 auto;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1rem;\r\n\tcolor: #959595;\r\n\ttext-align: justify;\r\n}\r\n/*footer end*/\r\n\r\n/*media queries*/\r\n@media (max-width: 1360px) {\r\n  .for_all { \r\n\tmargin-left: 70px;\r\n}\r\n }\r\n\r\n @media (max-width: 1200px) {\r\n  .block-information__bookmark {\r\n\tposition: absolute;\r\n\tbottom: -15%;\r\n\tright: 5%;\r\n}\r\n }\r\n\r\n @media (max-width: 1100px) {\r\n  .block-background__content { \r\n\ttop: 100px;\r\n}\r\n }\r\n\r\n  @media (max-width: 1100px) {\r\n  .block-background__content { \r\n\ttop: 80px;\r\n}\r\n\r\n.block-image__article--uppercase {\r\n\tfont-size: 1.6rem;\r\n }\r\n\r\n .block-image__header {\r\n \tfont-size: 2.4rem;\r\n }\r\n\r\n .block-date {\r\n \twidth: 60%;\r\n }\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n\t.block-card1__information{\r\n\t\tflex-direction: column;\r\n\t}\r\n\t.cards-calendar,\r\n\t.cards-view {\r\n\twidth: 100%;\r\n\t}\r\n\r\n\r\n}\r\n\r\n@media (max-width: 1000px) {\r\n\t.block-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2rem;\r\n\tcolor: #716E6E;\r\n\twidth: 120%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart6-information__text {\r\n\tfont-size: 2rem;\r\n}\r\n.navbar {\r\n\t\twidth: 8%;\r\n\t}\r\n\r\n\r\n}\r\n\r\n@media (max-width: 992px) {\r\n\t#nav-toggle:checked ~ .section-part1 .navbar {\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\tposition: fixed;\r\n\tz-index: 99999;\r\n\theight: 100vh;\r\n\r\n}\r\n\r\nlabel[for=\"close\"] {\r\n\tmargin-top: 100px;\r\n}\r\n\r\n\t.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 100px;\r\n\tmargin-left: 100px;\r\n\theight: auto;\r\n}\r\n\r\n.block-background{\r\n\theight: 70vh;\r\n\twidth: auto;\r\n}\r\n\t.block-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2rem;\r\n\tcolor: #716E6E;\r\n\twidth: 120%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart6-information__text {\r\n\tfont-size: 2rem;\r\n}\r\n.navbar {\r\n\t\twidth: 8%;\r\n\t}\r\n\r\n.left_header, .right-menu {\r\n\tdisplay: none;\r\n}\r\n.menu-mobile {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n}\r\n\r\nheader {\r\n\tborder-bottom: 3px solid lightgrey;\r\n}\r\n\r\n.top-side {\r\n\twidth: 90%;\r\n\tmargin: 0 auto;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\tmargin-bottom: 10px;\r\n}\r\n\r\n.logo-img {\r\n\tborder: none;\r\n}\r\n.bottom-side {\r\n\twidth: 90%;\r\n\tmargin: 0 auto;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\tmargin-bottom: 10px; \r\n}\r\n\r\n.bottom-side a {\r\n\tfont-family: ProximaNova-SemiBold;\r\n\tfont-size: 2rem;\r\n\tcolor: #000000;\r\n\ttext-decoration: none;\r\n\ttext-transform: uppercase;\r\n\tborder-bottom: 3px solid #FFFFFF;\r\n}\r\n\r\n.bottom-side a:hover {\r\n\tborder-bottom: 3px solid #FBBC16;\r\n}\r\n\r\n.navbar {\r\n\tdisplay: none;\r\n}\r\n\r\n.block-image__article {\r\n\tcolor: #F70606;\r\n}\r\n\r\n.block-image__header {\r\n\tcolor: #FBBC16;\r\n}\r\n\r\nspan.block-calendar__date,\r\nspan.block-view__date {\r\n\tcolor: #FBBC16;\r\n}\r\n\r\n.section-part2 {\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\t\tposition: relative;\r\n}\r\n\r\n.img-part2 {\r\n\twidth: 70%;\r\n\theight: 40%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.block-card {\r\n\twidth: 60%;\r\n\theight: 35%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 65%;\r\n}\r\n\r\n.block-text--uppercase {\r\n\tdisplay: none;\r\n}\r\n\r\n.block-information__bookmark {\r\n\tbottom: -15%;\r\n\tright: 25%;\r\n}\r\n\r\n.block-information__text:before {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 10%;\r\n\tborder-top: none; \r\n}\r\n\r\n.block-information__text {\r\n\twidth: 90%;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n.section-part3 {\r\n\tpadding-top: 50px; \r\n}\r\n\r\n.section-part6 {\r\n\twidth: auto;\r\n\tdisplay: flex;\r\n\tflex-direction: column-reverse;\r\n\t\tposition: relative;\r\n}\r\n\r\n.img-part6 {\r\n\twidth: 70%;\r\n\theight: 40%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.blockpart6-card {\r\n\twidth: 60%;\r\n\theight: 45%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 0%;\r\n\tleft: 0;\r\n}\r\n\r\n.blockpart6-text--uppercase {\r\n\tdisplay: none;\r\n}\r\n\r\n.blockpart6-information__bookmark {\r\n\tbottom: -15%;\r\n\tright: 25%;\r\n}\r\n\r\n.blockpart6-information__text:after {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 10%;\r\n\tborder-top: none; \r\n}\r\n\r\n.blockpart6-information__text {\r\n\twidth: 90%;\r\n\tmargin: 0;\r\n\tposition: static;\r\n\ttext-align: left;\r\n}\r\n}\r\n\r\n@media (max-width: 800px) {\r\n\t.section-part7 {\r\n\t\tmargin-top: 100px;\r\n\t}\r\n\r\n\t.block-background {\r\n\theight: 60vh;\r\n\tposition: relative;\r\n\twidth: auto;\r\n}\r\n\r\n\t.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 70px;\r\n\tmargin-left: 80px;\r\n\theight: auto;\r\n}\r\n\r\n.block-cards {\r\n\tdisplay: grid;\r\n\twidth: 80%;\r\n\tgrid-template-columns: [col1start] 1fr [col1end];\r\n    grid-template-rows: [row1start] 1fr [row1end] 50px [row2start] 1fr [row2end] 50px [row3start] 1fr [row3end] 100px;\r\n    margin-left: 10%;\r\n}\r\n\r\n.block-cards__card1 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card2 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row2start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card3 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row3start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.section-part1 {\r\n\tmargin-bottom: 50px;\r\n}\r\n\r\n.img-part2 {\r\n\twidth: 80%;\r\n\theight: 60%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.block-card {\r\n\twidth: 70%;\r\n\theight: auto;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 0%;\r\n\tleft: 0;\r\n\tposition: relative;\r\n}\r\n\r\n.block-information__bookmark,\r\n.blockpart6-information__bookmark {\r\n\tbottom: -5%;\r\n\tright: 25%;\r\n}\r\n\r\n.section-part6 {\r\n\tmargin: 0 5%;\r\n\twidth: 85%;\r\n}\r\n.img-part6 {\r\n\twidth: 100%;\r\n\theight: 60%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.blockpart4-information__text {\r\n\tfont-size: 2rem;\r\n}\r\n\r\n.blockpart6-card {\r\n\twidth: 80%;\r\n\theight: auto;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 0%;\r\n\tleft: 0;\r\n\tposition: relative;\r\n}\r\n\r\n.navbar {\r\n\tdisplay: none;\r\n}\r\n.footer {\r\ndisplay: flex;\r\n\tflex-direction: column;\r\n}\r\n\r\n.footer__email {\r\n\tdisplay: flex;\r\n\tflex-direction:column;\r\n\twidth: 80%;\r\n\tmargin: 0 auto;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n}\r\n\r\n.input {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n}\r\n\r\n\r\n.footer__social {\r\n\tdisplay: flex;\r\n\tflex-direction:column;\r\n\twidth: 80%;\r\n\tmargin: 20px auto;\r\n\tjustify-content: center;\r\n}\r\n\r\n.footer__about {\r\n\tdisplay: flex;\r\n\tflex-direction:column;\r\n\twidth: 80%;\r\n\tmargin: 20px auto;\r\n\tjustify-content: center;\r\n}\r\n}\r\n\r\n@media (max-width: 700px) {\r\n   .block-background{\r\n\theight: 50vh;\r\n\tposition: relative;\r\n\twidth: auto;\r\n}\r\n\r\n\t.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tmargin-left: 60px;\r\n\theight: auto;\r\n}\r\n\r\n.block-part4__information {\r\n\theight: 65%;\r\n\twidth: 70%;\r\n}\r\n}\r\n\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 /*
@@ -216,7 +146,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -588,6 +518,93 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(3);
+
+__webpack_require__(6);
+
+__webpack_require__(8);
+
+var _sorting = __webpack_require__(17);
+
+var _scroll = __webpack_require__(18);
+
+var _animation = __webpack_require__(19);
+
+var _views = __webpack_require__(20);
+
+var sortpopular = document.getElementById("popular");
+sortpopular.addEventListener("click", function () {
+  return (0, _sorting.sortablepopular)(".blocks", "data-popular");
+});
+sortpopular.addEventListener("click", _sorting.hidden1);
+
+var sortnew = document.getElementById("new");
+sortnew.addEventListener("click", function () {
+  return (0, _sorting.sortablenew)(".blocks", "data-new");
+});
+sortnew.addEventListener("click", _sorting.hidden1);
+
+(0, _scroll.scroll)();
+
+var animation = new Animation();
+var menu = document.querySelector("#nav-toggle");
+menu.addEventListener("change", _animation.animationMenu);
+var menuclose = document.querySelector("#close");
+menuclose.addEventListener("change", _animation.closeMenu);
+(0, _views.modalWin)();
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(4);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n* {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tfont-size: 10px;\r\n}\r\n\r\n\r\n/*header start*/\r\nheader {\r\n\tposition: relative;\r\n\tz-index: 99999;\r\n\tborder-bottom: 1px solid lightgrey;\r\n}\r\n\r\n.left_header {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: flex-start;\r\n\r\n}\r\n\r\n.logo {\r\n\twidth: 10%;\r\n\theight: 20%;\r\n\tposition: relative;\r\n}\r\n\r\n.logo-img {\r\n\twidth: auto;\r\n\tpadding: 20px;\r\n\tborder-right: 2px solid lightgrey;\r\n}\r\n\r\n.for_all { \r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tmargin-left: 30px;\r\n\tflex-direction: column;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n\ttext-align: center;\r\n}\r\n\r\n\r\n.for_all-menu {\r\n\tbackground-color: #FBBC16;\r\n\ttext-decoration: none;\r\n\tcolor: #000000;\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-weight: bold;\r\n\tfont-size: 1.8rem;\r\n\tpadding: 5px 15px;\r\n\tborder-radius: 20px;\r\n}\r\n\r\n.for_all-menu:hover ~ #sub_menu {\r\n\tdisplay: flex;\r\n\twidth: 200px;\r\n}\r\n\r\n.right-menu {\r\n\tdisplay: flex;\r\n\tjustify-content: flex-end;\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: 0;\r\n}\r\n\r\n.right-menu__list {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tlist-style-type: none;\r\n\tpadding: 20px;\r\n\tborder-right: 2px solid lightgrey;\r\n}\r\n\r\n.right-menu__list .right-menu__list--item a {\r\n\tfont-size: 1.4rem;\r\n\tfont-family: Lora-Regular;\r\n\tfont-weight: bold;\r\n\ttext-decoration: none;\r\n\tpadding: 10px;\r\n\tcolor: #000000;\r\n\tfont-weight: bold;\r\n}\r\n\r\n.magnifier,\r\n.bookmark {\r\n\tborder:none;\r\n\tpadding: 20px;\r\n}\r\n\r\n.menu-mobile {\r\n\tdisplay: none;\r\n}\r\n\r\n.section-part1 {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n}\r\n\r\n.navbar {\r\n\theight: 100vh;\r\n\ttop: 0;\r\n\twidth: 5%;\r\n\tposition: fixed;\r\n\tbackground-color: #FFFFFF;\r\n\tz-index: 999; \r\n\tpadding-top: 60px;\r\n}\r\n\r\n.navigation-menu {\r\n\tdisplay: none;\r\n\tposition: relative;\r\n\tleft: -80px;\r\n}\r\n\r\n.navigation-menu__item {\r\n\tdisplay: flex;\r\n\tjustify-content: flex-start;\r\n\talign-items: center;\r\n\tpadding-left: 20%;\r\n}\r\n\r\n.navigation-menu__item-uppercase {\r\n\ttext-transform: uppercase;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar .nav-menu .navigation-menu {\r\n\tdisplay: flex;\r\n\tjustify-content: center;\r\n\tflex-direction: column;\r\n\r\n}\r\n\r\n.nav-menu {\r\n\tdisplay: flex;\r\nflex-direction: row;\r\njustify-content: flex-start;\r\nwidth: 100%;\r\n}\r\n\r\n.nav-menu label {\r\n\tmargin-top: 60px;\r\n\tfont-size: 2.2rem;\r\n\tpadding-top: 20px;\r\n\tpadding-left: 20px;\r\n\tfont-family: ProximaNova-Semibold;\r\n}\r\n\r\nlabel[for=\"close\"] {\r\n\tcursor: pointer;\r\n}\r\n\r\n.nav-menu .navigation-menu {\r\n\talign-self: center;\r\n\twidth: 100%;\r\n\tmargin-left: 30%;\r\n}\r\n\r\n\r\n.nav-menu .navigation-menu a {\r\n\ttext-align: left;\r\n}\r\n\r\n.nav-menu .navigation-menu a:before {\r\n\tcontent: \" \";\r\n\twidth: 30px;\r\n\theight: 3px;\r\n\tbackground: #FBBC16;\r\n\tdisplay: block;\r\n\topacity: 0;\r\n\tmargin: 0 0 -10px -50px;\r\n}\r\n\r\n.nav-menu .navigation-menu a:hover:before {\r\n\topacity: 1;\r\n}\r\n\r\n.section-part1 .navbar .nav-menu label {\r\n\tdisplay: none;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar .nav-menu label {\r\n\tdisplay: block;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar  label .burger__img {\r\n\tdisplay: none;\r\n}\r\n\r\n#close:checked ~ .section-part1 .navbar  .nav-menu label[for=\"close\"] {\r\n\tdisplay: none;\r\n}\r\n\r\n#close:checked ~ .section-part1 .navbar  label .burger__img {\r\n\tdisplay: flex;\r\n}\r\n\r\n#nav-toggle:checked ~ .section-part1 .navbar {\r\n\tdisplay: flex;\r\n\tposition: fixed;\r\nz-index: 999;\r\n}\r\n\r\n#close:checked ~ .section-part1 .navbar {\r\n\twidth: 5%;\r\n\ttransition: width 0.5s;\r\n}\r\n\r\n#close:checked ~ .section-part1 .navbar .nav-menu .navigation-menu {\r\n\tdisplay: none;\r\n}\r\n\r\n\r\n\r\nlabel[for=\"close\"]:hover {\r\n\tcolor: #FBBC16;\r\n}\r\n\r\n\r\n.navigation-menu {\r\n\tlist-style-type: none;\r\n}\r\n\r\n.navigation-menu__item {\r\n\tpadding-bottom: 30px;\r\n\r\n} \r\n\r\n.navbar .nav-menu label {\r\n\tposition: relative;\r\n\ttop: -50px;\r\n}\r\n\r\n\r\n.navigation-menu__item a{\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-size: 1.8rem;\r\n\tcolor: #000000;\r\n} \r\n\r\n.navbar a {\r\n\ttext-decoration: none;\r\n}\r\n\r\nlabel[for=\"nav-toggle\"] {\r\n\tcursor: pointer;\r\n}\r\n\r\n.burger__img {\r\n\tdisplay: block;\r\n\tpadding: 20px;\r\n}\r\n/*header end*/\r\n/*content start*/\r\n.block-background{\r\n\tposition: relative;\r\n\twidth: auto;\r\n}\r\n\r\n.block-background__image {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tz-index: -1;\r\n\tposition: relative;\r\n}\r\n\r\n.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 150px;\r\n\tmargin-left: 100px;\r\n\theight: auto;\r\n}\r\n\r\n.block-image {\r\n\twidth: 95%;\r\n\theight: auto;\r\n\tmargin-left: 5%;\r\n\tposition: relative;\r\n}\r\n\r\n\r\n.block-image__article {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.8rem;\r\n\tcolor: #FBBC16;\r\n\tfont-weight: bold;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-image__header {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 3.2rem;\r\n\twidth: 80%;\r\n\tcolor: #FFFFFF;\r\n\tfont-weight: bold;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-date  {\r\n\twidth: 40%;\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-calendar {\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n}\r\n\r\n.block-view {\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n}\r\n\r\n.block-date img {\r\n\twidth: 20px;\r\n\theight: 20px;\r\n}\r\n\r\n.block-date span {\r\n\tdisplay: inline-block;\r\n\tmargin: 0px 15px;\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.6rem;\r\n\tcolor: #FFFFFF;\r\n}\r\n\r\n.block-image__article--uppercase {\r\n\ttext-transform: uppercase;\r\n}\r\n\r\n.block-button {\r\n\tdisplay: flex;\r\n\tjustify-content: space-between;\r\n\talign-items: center;\r\n\twidth: 15%;\r\n\tpadding-bottom: 3rem;\r\n}\r\n\r\n.block-button__reader1,\r\n.block-button__reader2, \r\n.block-button__reader3, \r\n.block-button__reader4  {\r\n\tbackground-color: #FBBC16;\r\n\tpadding: 10px 25px;\r\n\tcolor: #000000;\r\n\tfont-family: ProximaNova-Extrabld;\r\n\tfont-size: 1.6rem; \r\n\tborder-radius: 20px;\r\n\tmargin-right: 30px;\r\n\tborder: 2px solid #FFFFFF;\r\n\tcursor: pointer;\r\n}\r\n\r\n.block-button__reader1:focus,\r\n.block-button__reader2:focus,\r\n.block-button__reader3:focus,\r\n.block-button__reader4:focus {\r\n\toutline: none;\r\n}\r\n\r\n.block-button__reader1:hover,\r\n.block-button__reader2:hover,\r\n.block-button__reader3:hover,\r\n.block-button__reader4:hover {\r\n\tbackground-color: #FFFFFF;\r\n\tcolor: #000000;\r\n\tborder: 2px solid #FBBC16;\r\n\tcursor: pointer;\r\n}\r\n\r\n.block-sorting {\r\n\tmargin-left: 10%;\r\n\tmargin-top: 30px; \r\n}\r\n\r\n.block-sorting span {\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-size: 2rem;\r\n\tcolor: #424141;\r\n\tfont-weight: bold;\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n.block-sorting a {\r\n\ttext-decoration: none;\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-size: 2rem;\r\n\tcolor: #424141;\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n\tcursor: pointer;\r\n}\r\n\r\n\r\n.block-sorting .sort-popular,\r\n.block-sorting .sort-new,\r\n.block-sorting .sort-reject {\r\n\tborder: none;\r\n\tbackground-color: #FFFFFF;\r\n\tcolor: #424141;\r\n\tfont-family: ProximaNova-Semibold;\r\n\tfont-size: 2rem;\r\n\tpadding: 0 15px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.block-sorting .sort-popular:hover,\r\n.block-sorting .sort-new:hover,\r\n.block-sorting .sort-reject:hover {\r\n\tcolor: #FBBC16;\r\n}\r\n\r\n.block-sorting .sort-popular,\r\n.block-sorting .sort-new\r\n {\r\n\tborder-right: 2px solid #424141;\r\n}\r\n\r\n\r\n.sort-popular:focus,\r\n.sort-new:focus,\r\n.sort-reject:focus {\r\n\toutline: none;\r\n}\r\n\r\n.section-part2 {\r\n\theight: 500px;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tposition: relative;\r\n\t\r\n}\r\n\r\n.img-part2 {\r\n\twidth: 45%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: absolute;\r\n\tleft: 10%;\r\n\tz-index: -1;\r\n}\r\n\r\n.block-card {\r\n\twidth: 30%;\r\n\theight: 45%;\r\n\tposition: relative;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tposition: absolute;\r\n\ttop: 35%;\r\n\tright: 18%;\r\n\tz-index: 1000;\r\n}\r\n\r\n\r\n.block-information {\r\n\tborder:1px solid #000000;\r\n\theight: 90%;\r\n\tbackground-color: #FFFFFF;\r\n\tpadding-left: 30px; \r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.block-text--uppercase {\r\n\ttext-transform: uppercase;\r\n\tcolor: #FBBC16;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tdisplay: flex;\r\n\tjustify-content: flex-end;\r\n}\r\n\r\n.block-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2rem;\r\n\tcolor: #716E6E;\r\n\twidth: 90%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.block-information__text:before {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 10%;\r\n\tborder-top: 3px solid red;\r\n\tposition: absolute;\r\n\tleft: -5%;\r\n}\r\n\r\n.block-information__content {\r\n\tpadding: 20px 0;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tposition: relative;\r\n}\r\n\r\n\r\n\r\n.block-information__date {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 2rem;\r\n}\r\n\r\n.block-information__date img,\r\n.block-information__date span,\r\n.block-information__view img,\r\n.block-information__view span {\r\n\tpadding: 0 5px;\r\n}\r\n\r\n.block-information__view {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tmargin-left: 60px;\r\n}\r\n\r\n.block-information__date span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.block-information__view span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.button-read {\r\n\tpadding-top: 20px;\r\n\tposition: relative;\r\n\tbottom: 1rem;\r\n}\r\n\r\n.block-information__bookmark {\r\n\tposition: absolute;\r\n\tbottom: -25%;\r\n\tright: 5%;\r\n}\r\n\r\n\r\n.block-cards {\r\n\tdisplay: grid;\r\n\twidth: 80%;\r\n\tgrid-template-columns: [col1start] 1fr [col1end] 5% \r\n                           [col2start] 1fr [col2end] 5%\r\n                            [col3start] 1fr [col3end];\r\n    grid-template-rows: [row1start] 1fr [row1end];\r\n    margin-left: 10%;\r\n}\r\n\r\n.block-cards__card1 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card2 {\r\n\t grid-column: col2start / col2end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card3 {\r\n\t grid-column: col3start / col3end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.card1__text {\r\n\tfont-family: Lore_Regular;\r\n\tfont-size: 1.8rem;\r\n\tcolor: #FBBC16;\r\n\tpadding-bottom: 20px;\r\n\ttext-transform: uppercase;\r\n}\r\n\r\n.card1__image {\r\n\twidth: 100%;\r\n}\r\n\r\n.block-card1__information {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\twidth: 70%;\r\n\r\n}\r\n\r\n.calendar__date,\r\n.view {\r\n\tfont-family: Lore_Regular;\r\n\tfont-size: 1.6rem;\r\n}\r\n\r\n.block-card__image {\r\n\tposition: relative;\r\n}\r\n\r\n.card1__bookmark {\r\n\tposition: absolute;\r\n\tright: 5%;\r\n\tbottom: -5%;\r\n}\r\n\r\n.cards-calendar,\r\n.cards-view {\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tmargin: 10px 0;\r\n\t\r\n\r\n}\r\n\r\n.cards-calendar img,\r\n.cards-view img{\r\n\tmargin-right: 10px;\r\n}\r\n\r\n.cards__maintext {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.8rem;\r\n\tmargin-top: 10px;\r\n}\r\n\r\n.section-part4 {\r\n\twidth: 80%;\r\n\tmargin-left: 10%;\r\n\tmargin-top: 5%;\r\n}\r\n\r\n.block-part4 {\r\n\tbackground-size: cover;\r\n\theight: 430px;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: relative;\r\n}\r\n\r\n.block-part4__image {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n}\r\n\r\n.section-part4__header {\r\n\ttext-transform: uppercase;\r\n\tcolor: #FBBC16;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tmargin-bottom: 5%;\r\n}\r\n\r\n.block-part4__information {\r\n\tborder:1px solid #000000;\r\n\theight: 55%;\r\n\tbackground-color: #FFFFFF;\r\n\tpadding-left: 30px; \r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n\twidth: 50%;\r\n\tposition: absolute;\r\n\tleft: 3%;\r\n\ttop: 15%;\r\n}\r\n\r\n.blockpart4-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2.6rem;\r\n\tcolor: #716E6E;\r\n\twidth: 80%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart4-information__bookmark {\r\n\tposition: absolute;\r\n\tright: 5%;\r\n\tbottom: -5%;\r\n}\r\n\r\n.blockpart4-information__text:before {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 6%;\r\n\tborder-top: 3px solid red;\r\n\tposition: absolute;\r\n\tleft: -3%;\r\n}\r\n\r\n.section-part5,\r\n.section-part7 {\r\n\tmargin-top: 5%;\r\n}\r\n\r\n.section-part6 {\r\n\twidth: 90%;\r\n\theight: 500px;\r\n\tmargin-left: 10%;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tjustify-content: center;\r\n\tposition: relative;\r\n}\r\n\r\n.img-part6 {\r\n\twidth: 45%;\r\n\theight: 50%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: absolute;\r\n\tright: 10%;\r\n\tz-index: -1;\r\n}\r\n\r\n.blockpart6-card {\r\n\twidth: 40%;\r\n\theight: 50%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tposition: absolute;\r\n\ttop: 20%;\r\n\tleft: 7%;\r\n\tz-index: 1;\r\n}\r\n\r\n\r\n.blockpart6-information {\r\n\tborder:1px solid #000000;\r\n\theight: 90%;\r\n\tbackground-color: #FFFFFF;\r\n\tpadding-left: 30px; \r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart6-text--uppercase {\r\n\ttext-transform: uppercase;\r\n\tcolor: #FBBC16;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tdisplay: flex;\r\n\tjustify-content: flex-start;\r\n\tpadding: 10px 0 20px 0;\r\n}\r\n\r\n.blockpart6-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2rem;\r\n\tcolor: #716E6E;\r\n\twidth: 90%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n\tposition: relative;\r\n\ttext-align: right;\r\n}\r\n\r\n.blockpart6-information__text:after {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 6%;\r\n\tborder-top: 3px solid red;\r\n\tposition: absolute;\r\n\ttop: 20px;\r\n\tright: -15%;\r\n}\r\n\r\n.blockpart6-information__content {\r\n\tpadding: 20px 0;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n}\r\n\r\n\r\n\r\n.blockpart6-information__date {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 2rem;\r\n}\r\n\r\n.blockpart6-information__date img,\r\n.blockpart6-information__date span,\r\n.blockpart6-information__view img,\r\n.blockpart6-information__view span {\r\n\tpadding: 0 5px;\r\n}\r\n\r\n.blockpart6-information__view {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\talign-items: center;\r\n\tmargin-left: 60px;\r\n}\r\n\r\n.blockpart6-information__date span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.blockpart6-information__view span {\r\n\tfont-family: Lora-Regular;\r\n\tfont-size: 1.4rem;\r\n}\r\n\r\n.buttonpart6-read {\r\n\tpadding-top: 20px;\r\n\tdisplay: flex;\r\n\tjustify-content: flex-end;\r\n\tpadding-right: 60px;\r\n}\r\n\r\n.blockpart6-information__bookmark {\r\n\tposition: absolute;\r\n\tbottom: -30%;\r\n\tleft: 5%;\r\n}\r\n\r\n.block-showmore {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: center;\r\n\tmargin: 50px 0;\r\n}\r\n\r\n.block-showmore__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.4rem;\r\n\tcolor: #000000;\r\n\tmargin-left: 10px;\r\n}\r\n\r\n.back_to_top {\r\n  position: fixed;\r\n  bottom: 40px;\r\n  right: 10px;\r\n  z-index: 999999;\r\n  width: 40px;\r\n  height: 40px;\r\n  border-radius: 50%;\r\n  text-align: center;\r\n  line-height: 30px;\r\n\r\n  color:#2C3E50;\r\n  cursor: pointer;\r\ndisplay: none;\r\n  font-size: 24px;\r\n  border: 2px solid #2C3E50;\r\n}\r\n\r\n.back_to_top:hover {\r\n  background: #FFFFFF;\r\n  border: 2px solid #FBBC16;\r\n  color: #FBBC16;\r\n}\r\n\r\n.back_to_top-show {\r\n  display: block;\r\n}\r\n/*content \r\n/*footer start*/\r\n.footer {\r\n\twidth: 100%;\r\n\tposition: relative;\r\n\tz-index: 9999;\r\n\tbackground: #EBEBEB;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tflex-wrap: wrap;\r\n\tjustify-content: center;\r\n\tpadding: 50px 0;\r\n\r\n}\r\n\r\n.footer__email {\r\n\twidth: 30%;\r\n}\r\n\r\n#footer_email {\r\n\tborder:none;\r\n\tborder-bottom: 2px solid #000000;\r\n\toutline: none;\r\n\tbackground:#EBEBEB; \r\n\theight: 20px;\r\n\twidth: 80%;\r\n}\r\n\r\n.footer__email-text,\r\n.footer__social-text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tcolor: #959595;\r\n\tmargin-bottom: 20px;\r\n}\r\n\r\n.footer__email-sign {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1.6rem;\r\n\tcolor: #959595;\r\n\tmargin-bottom: 10px;\r\n}\r\n\r\n.footer__social {\r\n\twidth: 30%;\r\n}\r\n\r\n.social {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\talign-items: center;\r\n\twidth: 60%;\r\n\tmargin: 30px auto 0 auto;\r\n}\r\n\r\n.footer__about {\r\n\twidth: 30%;\r\n}\r\n\r\n.footer__about-text {\r\n\twidth: 80%;\r\n\tmargin: 0 auto;\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 1rem;\r\n\tcolor: #959595;\r\n\ttext-align: justify;\r\n}\r\n/*footer end*/\r\n\r\n/*media queries*/\r\n@media (max-width: 1360px) {\r\n  .for_all { \r\n\tmargin-left: 70px;\r\n}\r\n }\r\n\r\n @media (max-width: 1200px) {\r\n  .block-information__bookmark {\r\n\tposition: absolute;\r\n\tbottom: -15%;\r\n\tright: 5%;\r\n}\r\n }\r\n\r\n @media (max-width: 1100px) {\r\n  .block-background__content { \r\n\ttop: 100px;\r\n}\r\n }\r\n\r\n  @media (max-width: 1100px) {\r\n  .block-background__content { \r\n\ttop: 80px;\r\n}\r\n\r\n.block-image__article--uppercase {\r\n\tfont-size: 1.6rem;\r\n }\r\n\r\n .block-image__header {\r\n \tfont-size: 2.4rem;\r\n }\r\n\r\n .block-date {\r\n \twidth: 60%;\r\n }\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n\t.block-card1__information{\r\n\t\tflex-direction: column;\r\n\t}\r\n\t.cards-calendar,\r\n\t.cards-view {\r\n\twidth: 100%;\r\n\t}\r\n\r\n\r\n}\r\n\r\n@media (max-width: 1000px) {\r\n\t.block-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2rem;\r\n\tcolor: #716E6E;\r\n\twidth: 120%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart6-information__text {\r\n\tfont-size: 2rem;\r\n}\r\n.navbar {\r\n\t\twidth: 8%;\r\n\t}\r\n\r\n\r\n}\r\n\r\n@media (max-width: 992px) {\r\n\t#nav-toggle:checked ~ .section-part1 .navbar {\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\tposition: fixed;\r\n\tz-index: 99999;\r\n\theight: 100vh;\r\n\r\n}\r\n\r\nlabel[for=\"close\"] {\r\n\tmargin-top: 100px;\r\n}\r\n\r\n\t.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 100px;\r\n\tmargin-left: 100px;\r\n\theight: auto;\r\n}\r\n\r\n.block-background{\r\n\twidth: auto;\r\n}\r\n\t.block-information__text {\r\n\tfont-family: Lora-Bold;\r\n\tfont-size: 2rem;\r\n\tcolor: #716E6E;\r\n\twidth: 120%;\r\n\tpadding-top: 20px;\r\n\tpadding-bottom: 20px;\r\n}\r\n\r\n.blockpart6-information__text {\r\n\tfont-size: 2rem;\r\n}\r\n.navbar {\r\n\t\twidth: 8%;\r\n\t}\r\n\r\n.left_header, .right-menu {\r\n\tdisplay: none;\r\n}\r\n.menu-mobile {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n}\r\n\r\nheader {\r\n\tborder-bottom: 3px solid lightgrey;\r\n}\r\n\r\n.top-side {\r\n\twidth: 90%;\r\n\tmargin: 0 auto;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\tmargin-bottom: 10px;\r\n}\r\n\r\n.logo-img {\r\n\tborder: none;\r\n}\r\n.bottom-side {\r\n\twidth: 90%;\r\n\tmargin: 0 auto;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-between;\r\n\tmargin-bottom: 10px; \r\n}\r\n\r\n.bottom-side a {\r\n\tfont-family: ProximaNova-SemiBold;\r\n\tfont-size: 2rem;\r\n\tcolor: #000000;\r\n\ttext-decoration: none;\r\n\ttext-transform: uppercase;\r\n\tborder-bottom: 3px solid #FFFFFF;\r\n}\r\n\r\n.bottom-side a:hover {\r\n\tborder-bottom: 3px solid #FBBC16;\r\n}\r\n\r\n.navbar {\r\n\tdisplay: none;\r\n}\r\n\r\n.block-image__article {\r\n\tcolor: #F70606;\r\n}\r\n\r\n.block-image__header {\r\n\tcolor: #FBBC16;\r\n}\r\n\r\nspan.block-calendar__date,\r\nspan.block-view__date {\r\n\tcolor: #FBBC16;\r\n}\r\n\r\n.section-part2 {\r\n\twidth: 100%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\t\tposition: relative;\r\n}\r\n\r\n.img-part2 {\r\n\twidth: 70%;\r\n\theight: 40%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.block-card {\r\n\twidth: 60%;\r\n\theight: 35%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 65%;\r\n}\r\n\r\n.block-text--uppercase {\r\n\tdisplay: none;\r\n}\r\n\r\n.block-information__bookmark {\r\n\tbottom: -15%;\r\n\tright: 25%;\r\n}\r\n\r\n.block-information__text:before {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 10%;\r\n\tborder-top: none; \r\n}\r\n\r\n.block-information__text {\r\n\twidth: 90%;\r\n\tmargin: 0 auto;\r\n}\r\n\r\n.section-part3 {\r\n\tpadding-top: 50px; \r\n}\r\n\r\n.section-part6 {\r\n\twidth: auto;\r\n\tdisplay: flex;\r\n\tflex-direction: column-reverse;\r\n\t\tposition: relative;\r\n}\r\n\r\n.img-part6 {\r\n\twidth: 70%;\r\n\theight: 40%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.blockpart6-card {\r\n\twidth: 60%;\r\n\theight: 45%;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 0%;\r\n\tleft: 0;\r\n}\r\n\r\n.blockpart6-text--uppercase {\r\n\tdisplay: none;\r\n}\r\n\r\n.blockpart6-information__bookmark {\r\n\tbottom: -15%;\r\n\tright: 25%;\r\n}\r\n\r\n.blockpart6-information__text:after {\r\n\tcontent: \"\\A0\\A0\\A0\";\r\n\twidth: 10%;\r\n\tborder-top: none; \r\n}\r\n\r\n.blockpart6-information__text {\r\n\twidth: 90%;\r\n\tmargin: 0;\r\n\tposition: static;\r\n\ttext-align: left;\r\n}\r\n}\r\n\r\n@media (max-width: 800px) {\r\n\t.section-part7 {\r\n\t\tmargin-top: 100px;\r\n\t}\r\n\r\n\t.block-background {\r\n\r\n\tposition: relative;\r\n\twidth: auto;\r\n}\r\n\r\n\t.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 70px;\r\n\tmargin-left: 80px;\r\n\theight: auto;\r\n}\r\n\r\n.block-cards {\r\n\tdisplay: grid;\r\n\twidth: 80%;\r\n\tgrid-template-columns: [col1start] 1fr [col1end];\r\n    grid-template-rows: [row1start] 1fr [row1end] 50px [row2start] 1fr [row2end] 50px [row3start] 1fr [row3end] 100px;\r\n    margin-left: 10%;\r\n}\r\n\r\n.block-cards__card1 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row1start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card2 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row2start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.block-cards__card3 {\r\n\t grid-column: col1start / col1end;\r\n   grid-row: row3start;\r\n   width: 100%;\r\n   height:100%;\r\n\tposition: relative;\r\n}\r\n\r\n.section-part1 {\r\n\tmargin-bottom: 50px;\r\n}\r\n\r\n.img-part2 {\r\n\twidth: 80%;\r\n\theight: 60%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.block-card {\r\n\twidth: 70%;\r\n\theight: auto;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 0%;\r\n\tleft: 0;\r\n\tposition: relative;\r\n}\r\n\r\n.block-information__bookmark,\r\n.blockpart6-information__bookmark {\r\n\tbottom: -5%;\r\n\tright: 25%;\r\n}\r\n\r\n.section-part6 {\r\n\tmargin: 0 5%;\r\n\twidth: 85%;\r\n}\r\n.img-part6 {\r\n\twidth: 100%;\r\n\theight: 60%;\r\n\tborder-bottom: 3px solid red;\r\n\tposition: static;\r\n\tz-index: -1;\r\n}\r\n\r\n.blockpart4-information__text {\r\n\tfont-size: 2rem;\r\n}\r\n\r\n.blockpart6-card {\r\n\twidth: 80%;\r\n\theight: auto;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tz-index: 1000;\r\n\ttop: 0%;\r\n\tleft: 0;\r\n\tposition: relative;\r\n}\r\n\r\n.navbar {\r\n\tdisplay: none;\r\n}\r\n.footer {\r\ndisplay: flex;\r\n\tflex-direction: column;\r\n}\r\n\r\n.footer__email {\r\n\tdisplay: flex;\r\n\tflex-direction:column;\r\n\twidth: 80%;\r\n\tmargin: 0 auto;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n}\r\n\r\n.input {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n}\r\n\r\n\r\n.footer__social {\r\n\tdisplay: flex;\r\n\tflex-direction:column;\r\n\twidth: 80%;\r\n\tmargin: 20px auto;\r\n\tjustify-content: center;\r\n}\r\n\r\n.footer__about {\r\n\tdisplay: flex;\r\n\tflex-direction:column;\r\n\twidth: 80%;\r\n\tmargin: 20px auto;\r\n\tjustify-content: center;\r\n}\r\n}\r\n\r\n@media (max-width: 700px) {\r\n   .block-background{\r\n\tposition: relative;\r\n\twidth: auto;\r\n}\r\n\r\n\t.block-background__content {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tmargin-left: 60px;\r\n\theight: auto;\r\n}\r\n\r\n.block-part4__information {\r\n\theight: 65%;\r\n\twidth: 70%;\r\n}\r\n}\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
@@ -686,44 +703,281 @@ module.exports = function (css) {
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(7);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./modalicon.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./modalicon.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*styles for Modal Icon*/\r\n\r\n.closeBtn1,\r\n.closeBtn2,\r\n.closeBtn3,\r\n.closeBtn4 {\r\nposition: absolute;\r\ncursor: pointer;\r\npadding: 0;\r\ntop: -10px;\r\nright: -10px;\r\nwidth: 22px;\r\nheight: 22px;\r\nborder: 2px solid #ccc;\r\n-webkit-border-radius: 50%;\r\n-moz-border-radius: 50%;\r\n-ms-border-radius: 50%;\r\n-o-border-radius: 50%;\r\nborder-radius: 50%;\r\nbackground-color: rgba(61, 61, 61, 0.8);\r\n-webkit-box-shadow: 0px 0px 10px #000;\r\n-moz-box-shadow: 0px 0px 10px #000;\r\nbox-shadow: 0px 0px 10px #000;\r\ntext-align: center;\r\ntext-decoration: none;\r\nfont-weight: bold;\r\nline-height: 20px;\r\n-webkit-transition: all ease .8s;\r\n-moz-transition: all ease .8s;\r\n-ms-transition: all ease .8s;\r\n -o-transition: all ease .8s;\r\n transition: all ease .8s;\r\n}\r\n\r\n.closeBtn1:before,\r\n.closeBtn2:before,\r\n.closeBtn3:before,\r\n.closeBtn4:before  {\r\ncolor: rgba(255, 255, 255, 0.9);\r\ncontent: '\\2715';\r\ntext-shadow: 0 -1px rgba(0, 0, 0, 0.9);\r\nfont-size: 16px;\r\n}\r\n\r\n.closeBtn1:hover,\r\n.closeBtn2:hover,\r\n.closeBtn3:hover,\r\n.closeBtn4:hover {\r\nbackground-color: #C8CCC9;\r\nborder-color: #000000;\r\ncolor: #000000;\r\n-webkit-transform: rotate(180deg);\r\n-moz-transform: rotate(180deg);\r\n-ms-transform: rotate(180deg);\r\n-o-transform: rotate(180deg);\r\ntransform: rotate(180deg);\r\n}\r\n\r\n.modal1,\r\n.modal2,\r\n.modal3,\r\n.modal4 {\r\n    background: rgba(0,0,0, 0.7);\r\n    display: none;\r\n    justify-content: center;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    position: fixed;\r\n    right: 0;\r\n    height: auto;\r\n    perspective: 500px;\r\n    z-index: 999999;\r\n\r\n    \r\n}\r\n\r\n.modal1 .modal-wrapper1,\r\n.modal2 .modal-wrapper2,\r\n.modal3 .modal-wrapper3,\r\n.modal4 .modal-wrapper4 {\r\n    width: 75%;\r\n    top: 10%;\r\n    background: #FBBC16;\r\n    position: absolute;\r\n    text-align: left;\r\n    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.1);\r\n    animation-name:modalopen;\r\n    animation-duration: 1s;\r\n    transform: rotateX(0deg);\r\n    z-index: 999999;\r\n    padding: 15px 0 35px 0;\r\n    border-radius: 15px;\r\n}\r\n\r\n.modal-header1, .modal-body1,\r\n.modal-header2, .modal-body2,\r\n.modal-header3, .modal-body3,\r\n.modal-header4, .modal-body4 {\r\n    padding: 5px 15px;\r\n}\r\n\r\n.modal-header1 h3,\r\n.modal-header2 h3,\r\n.modal-header3 h3,\r\n.modal-header4 h3 {\r\n    text-align: center;\r\n    color: #000000;\r\n    font-family: ProximaNova-Semibold;\r\n    font-size: 24px;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.modal-body1,\r\n.modal-body2,\r\n.modal-body3,\r\n.modal-body4  {\r\n    background: white;\r\n}\r\n\r\n.modal-body1 p,\r\n.modal-body2 p,\r\n.modal-body3 p,\r\n.modal-body4 p {\r\n    color: #000000;\r\n    font-family: ProximaNova-Semibold;\r\n    font-size: 16px;\r\n    width: 70%;\r\n    margin: 0 auto;\r\n    text-align: center;\r\n    padding-bottom: 15px;\r\n}\r\n\r\n.block__image {\r\n    display: flex;\r\n   justify-content: center;\r\n   width: 100%;\r\n   margin: 15px 0;\r\n}\r\n\r\n.modalImage {\r\n    position: relative;\r\n    width: 60%;\r\n    border-radius: 10px;\r\n}\r\n\r\n@keyframes modalopen{\r\n  from {\r\n    opacity: 0; \r\n    top: -20%;\r\n    transform: rotateX(15deg);\r\n   }\r\n  to {\r\n    opacity: 1; \r\n    top: 10%; \r\n    transform: rotateX(0deg);\r\n    }\r\n}\r\n\r\n/*styles for search*/\r\n\r\n.search__text {\r\n    font-family: ProximaNova-Semibold;\r\n    font-size: 2.4rem;\r\n    text-align: center;margin-bottom: 30px;\r\n}\r\n\r\n.block__search {\r\n    position: relative;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n#search {\r\n  font-size: 16px;\r\n  padding: 10px;\r\n  display: block;\r\n  width: 300px;\r\n  border: none;\r\n  border-bottom: 1px solid #3B3B3B;\r\n}\r\n\r\n#search:focus {\r\n  outline: none;\r\n}\r\n\r\nlabel[for=\"search\"] {\r\n    font-family: ProximaNova-Semibold;\r\n    font-size: 2rem;\r\n  color: #3B3B3B;\r\n  font-size: 18px;\r\n  position: absolute;\r\n  pointer-events: none;\r\n  left: 10px;\r\n  top: 15px;\r\n  transition: 0.2s ease all;\r\n  -moz-transition: 0.2s ease all;\r\n  -webkit-transition: 0.2s ease all;\r\n}\r\n\r\n#search:focus ~ label[for=\"search\"] {\r\n  top: -15px;\r\n  font-size: 14px;\r\n  color: #5264AE;\r\n}\r\n\r\n.bar {\r\n  position: relative;\r\n  display: block;\r\n  width: 320px;\r\n}\r\n.bar:before, .bar:after {\r\n  content: \"\";\r\n  height: 2px;\r\n  width: 0;\r\n  bottom: 0;\r\n  position: absolute;\r\n  background: #5264AE;\r\n  transition: 0.2s ease all;\r\n  -moz-transition: 0.2s ease all;\r\n  -webkit-transition: 0.2s ease all;\r\n}\r\n.bar:before {\r\n  left: 50%;\r\n}\r\n.bar:after {\r\n  right: 50%;\r\n}\r\n\r\n#search:focus ~ .bar:before,\r\n#search:focus ~ .bar:after {\r\n  width: 50%;\r\n}\r\n\r\n.search__result {\r\n    background-color: #FBBC16;\r\n    padding: 10px 25px;\r\n    color: #000000;\r\n    font-family: ProximaNova-Extrabld;\r\n    font-size: 1.6rem; \r\n    border-radius: 20px;\r\n    margin-right: 30px;\r\n    border: 2px solid #FFFFFF;\r\n    cursor: pointer;\r\n    text-decoration: none;\r\n}\r\n\r\n.search__result:hover {\r\n    background-color: #FFFFFF;\r\n    border: 2px solid #FBBC16;\r\n}\r\n\r\n.search__result:focus {\r\n    outline:none;\r\n}\r\n\r\n.overlay {\r\ntop: 0;\r\nright: 0;\r\nbottom: 0;\r\nleft: 0;\r\nz-index: 9999;\r\nvisibility: hidden;\r\nbackground-color: rgba(0, 0, 0, 0.7);\r\nopacity: 0;\r\nposition: fixed; \r\ncursor: default; \r\n}\r\n\r\n.overlay:target {\r\nvisibility: visible;\r\nopacity: 1;\r\n-webkit-transition: all 0.6s;\r\n-moz-transition: all 0.6s;\r\n-ms-transition: all 0.6s;\r\n-o-transition: all 0.6s;\r\ntransition: all 0.6s;\r\n}\r\n\r\n\r\n.popup {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\ntop: 0;\r\nright: 0;\r\nleft: 50%;\r\nfont-size: 14px;\r\nz-index: 10000;\r\nmargin: 0 auto;\r\nwidth: 100%;\r\nmin-width: 320px;\r\nmax-width: 820px;\r\nposition: fixed;\r\npadding: 30px;\r\nborder: 1px solid #383838;\r\n-webkit-border-radius: 10px;\r\n-moz-border-radius: 10px;\r\n-ms-border-radius: 10px;\r\nborder-radius: 10px;\r\nbackground-color: #FFFFFF;\r\n-webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-ms-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-o-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\nbox-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);\r\n-webkit-transform: translate(-50%, -150%);\r\n-ms-transform: translate(-50%, -150%);\r\n-o-transform: translate(-50%, -150%);\r\ntransform: translate(-50%, -150%);\r\n}\r\n.overlay:target + .popup {\r\ntop: 50%;\r\n-webkit-transform: translate(-50%,-50%);\r\n-ms-transform: translate(-50%, -50%);\r\n-o-transform: translate(-50%, -50%);\r\ntransform: translate(-50%, -50%);\r\n-webkit-transition: transform 0.6s ease-out;\r\n-moz-transition: transform 0.6s ease-out;\r\n-ms-transition: transform 0.6s ease-out;\r\n-o-transition: transform 0.6s ease-out;\r\ntransition: transform 0.6s ease-out;\r\n}\r\n\r\n.close {\r\nposition: absolute;\r\npadding: 0;\r\ntop: -10px;\r\nright: -10px;\r\nwidth: 22px;\r\nheight: 22px;\r\nborder: 2px solid #ccc;\r\n-webkit-border-radius: 50%;\r\n-moz-border-radius: 50%;\r\n-ms-border-radius: 50%;\r\n-o-border-radius: 50%;\r\nborder-radius: 50%;\r\nbackground-color: rgba(61, 61, 61, 0.8);\r\n-webkit-box-shadow: 0px 0px 10px #000;\r\n-moz-box-shadow: 0px 0px 10px #000;\r\nbox-shadow: 0px 0px 10px #000;\r\ntext-align: center;\r\ntext-decoration: none;\r\nfont-weight: bold;\r\nline-height: 20px;\r\n-webkit-transition: all ease .8s;\r\n-moz-transition: all ease .8s;\r\n-ms-transition: all ease .8s;\r\n -o-transition: all ease .8s;\r\n transition: all ease .8s;\r\n}\r\n.close:before {\r\ncolor: rgba(255, 255, 255, 0.9);\r\ncontent: '\\2715';\r\ntext-shadow: 0 -1px rgba(0, 0, 0, 0.9);\r\nfont-size: 16px;\r\n}\r\n.close:hover {\r\nbackground-color: #C8CCC9;\r\nborder-color: #000000;\r\ncolor: #000000;\r\n-webkit-transform: rotate(180deg);\r\n-moz-transform: rotate(180deg);\r\n-ms-transform: rotate(180deg);\r\n-o-transform: rotate(180deg);\r\ntransform: rotate(180deg);\r\n}\r\n.popup h1 {\r\nwidth: 80%;\r\nfont-size: 24px;\r\n}\r\n\r\n \r\n@media only screen and (min-width: 768px) and (max-width: 959px) {\r\n  .popup {\r\n    width: 95%;\r\n  }\r\n}\r\n \r\n@media only screen and (min-width: 320px) and (max-width: 767px) {\r\n  .popup {\r\n    width:85%;\r\n  }\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(9);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./fonts.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./fonts.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(10);
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "@font-face{\r\nfont-family: Lora-Bold;\r\nsrc: url(" + escape(__webpack_require__(11)) + ") format(\"truetype\");\r\n}\r\n\r\n@font-face{\r\nfont-family: Lora-BoldItalic;\r\nsrc: url(" + escape(__webpack_require__(12)) + ") format(\"truetype\");\r\n}\r\n\r\n@font-face{\r\nfont-family: Lora-Regular;\r\nsrc: url(" + escape(__webpack_require__(13)) + ") format(\"truetype\");\r\n}\r\n\r\n@font-face{\r\nfont-family: ProximaNova-Extrabld;\r\nsrc: url(" + escape(__webpack_require__(14)) + ") format(\"truetype\");\r\n}\r\n\r\n@font-face{\r\nfont-family: ProximaNova-Regular;\r\nsrc: url(" + escape(__webpack_require__(15)) + ") format(\"truetype\");\r\n}\r\n\r\n@font-face{\r\nfont-family: ProximaNova-Semibold;\r\nsrc: url(" + escape(__webpack_require__(16)) + ") format(\"truetype\");\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
+}
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "21ed2e3dec3ff37812afbfc186227f46.ttf";
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "4c9bbeab677dd05fab33c525448766f7.ttf";
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "9d79d984e265cbfb4dc0f3dbf0f269d0.ttf";
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "51563919fd1af7376fac14b1194a8e4e.ttf";
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "7ce6760d17685c466ba04d1b2c63c38b.ttf";
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "df8c626474a73ab7a8b511655597c7c4.ttf";
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-      value: true
+    value: true
 });
 // sort by popular
+function sortablepopular(cls, attr) {
 
-function sortable(cls, attr) {
-      console.log("lol in func");
-      var elements = document.querySelectorAll(cls),
-          len = elements.length,
-          parent = document.querySelector('.main-content'),
-          arrElements = [];
+    var elementspopular = document.querySelectorAll(cls),
+        length = elementspopular.length,
+        parentelement = document.querySelector('.main-content'),
+        arrayElements = [];
 
-      for (var i = 0; i < len; i++) {
-            arrElements.push({
-                  dataAttr: elements[i].getAttribute(attr),
-                  el: elements[i]
-            });
-      }
+    for (var i = 0; i < length; i++) {
+        arrayElements.push({
+            dataAttr: elementspopular[i].getAttribute(attr),
+            el: elementspopular[i]
+        });
+    }
 
-      arrElements.sort(function (a, b) {
-            return parseInt(a.dataAttr) < parseInt(b.dataAttr) ? 1 : -1;
-      });
+    arrayElements.sort(function (a, b) {
+        return parseInt(a.dataAttr) > parseInt(b.dataAttr) ? 1 : -1;
+    });
 
-      for (var j = 0; j < len; j++) {
-            parent.appendChild(arrElements[j].el);
-            parent.style.width = "65%";
-            parent.style.margin = "0 auto";
-      }
-      console.log("Correct work");
+    for (var j = 0; j < length; j++) {
+        parentelement.appendChild(arrayElements[j].el);
+        parentelement.style.width = "40%";
+        parentelement.style.margin = "0 auto";
+    }
+    console.log("Correct work");
 }
 
-exports.sortable = sortable;
+//sort by new 
+function sortablenew(cls, attr) {
+
+    var elements = document.querySelectorAll(cls),
+        len = elements.length,
+        parent = document.querySelector('.main-content'),
+        arrElements = [];
+
+    for (var i = 0; i < len; i++) {
+        arrElements.push({
+            dataAttr: elements[i].getAttribute(attr),
+            el: elements[i]
+        });
+    }
+
+    arrElements.sort(function (a, b) {
+        return parseInt(a.dataAttr) > parseInt(b.dataAttr) ? 1 : -1;
+    });
+
+    for (var j = 0; j < len; j++) {
+        parent.appendChild(arrElements[j].el);
+        parent.style.width = "40%";
+        parent.style.margin = "0 auto";
+    }
+    console.log("Correct work");
+}
+
+//styles for blocks
+function hidden1() {
+    var pict1 = document.getElementById('image_none1');
+    var subblocks1 = document.querySelector('.block-card');
+    var blockmargin1 = document.querySelector('.section-part2');
+    blockmargin1.style.height = "350px";
+    subblocks1.style.width = "100%";
+    subblocks1.style.height = "100%";
+    subblocks1.style.right = "0";
+    subblocks1.style.top = "0";
+    pict1.style.display = 'none';
+    var pict2 = document.getElementById('image_none2');
+    var subblocks2 = document.querySelector('.blockpart6-card');
+    var blockmargin2 = document.querySelector('.section-part6');
+    subblocks2.style.width = "100%";
+    subblocks2.style.height = "100%";
+    subblocks2.style.left = "0";
+    subblocks2.style.top = "0";
+    blockmargin2.style.margin = "0";
+    blockmargin2.style.height = "350px";
+    pict2.style.display = 'none';
+    var alignblocks = document.querySelectorAll('.blocks');
+    var len = alignblocks.length;
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = alignblocks[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var block = _step.value;
+
+            block.style.marginBottom = "50px";
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    var element = document.querySelector(".blockpart6-information__bookmark");
+    element.style.left = "90%";
+    element.style.bottom = "-5%";
+    var modificator = document.querySelector(".block__modificator");
+    var mod = document.querySelector(".blockpart4-information__text");
+    mod.style.fontSize = "2rem";
+    modificator.style.marginTop = "0";
+    modificator.style.marginLeft = "0";
+    modificator.style.marginRight = "0";
+    modificator.style.width = "100%";
+}
+
+exports.sortablepopular = sortablepopular;
+exports.sortablenew = sortablenew;
+exports.hidden1 = hidden1;
 
 /***/ }),
-/* 7 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -732,26 +986,165 @@ exports.sortable = sortable;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+function scroll() {
+  function trackScroll() {
+    var scrolled = window.pageYOffset;
+    var coords = document.documentElement.clientHeight;
 
-function animation_menu() {
-  var start = Date.now();
-  var navbar = document.querySelector(".navbar");
-  var navmenu = document.querySelector(".navigation-menu");
-  var timer = setInterval(function () {
-    var timePassed = Date.now() - start;
-    navbar.style.width = timePassed / 1.4 + 'px';
-    if (timePassed > 600) clearInterval(timer);
-  }, 20);
+    if (scrolled > coords) {
+      goTopBtn.classList.add('back_to_top-show');
+    }
+    if (scrolled < coords) {
+      goTopBtn.classList.remove('back_to_top-show');
+    }
+  }
+
+  function backToTop() {
+    if (window.pageYOffset > 0) {
+      window.scrollBy(0, -20);
+      setTimeout(backToTop, 0);
+    }
+  }
+
+  var goTopBtn = document.querySelector('.back_to_top');
+
+  document.addEventListener('scroll', trackScroll);
+  goTopBtn.addEventListener('click', backToTop);
 }
+exports.scroll = scroll;
 
-function animation_close() {
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/*function Animation () {
+
+  var animationStartTime = 0;
+  var animationDuration = 500;
+  var target = document.querySelector(".navbar");
+
+  this.startAnimation = function() {
+    animationStartTime = Date.now();
+    requestAnimationFrame(update);
+  };
+
+  function update() {
+    var currentTime = Date.now();
+    var positionInAnimation = (currentTime - animationStartTime) / animationDuration;
+
+    var widthMenu = positionInAnimation * 400;
+
+    target.style.width = widthMenu + "px";
+ console.log(positionInAnimation);
+    if (positionInAnimation <= 1)
+      requestAnimationFrame(update);
+  }
+}*/
+
+function animationMenu() {
   var nav = document.querySelector(".navbar");
-  nav.style.width = 5 + "%";
-  nav.style.transition = "all 0.5s";
+  var widthOpen = 30 + "%";
+  nav.style.width = widthOpen;
+  console.log("ok");
+  nav.style.transition = "width 0.5s";
 }
 
-exports.animation_menu = animation_menu;
-exports.animation_close = animation_close;
+function closeMenu() {
+  var nav = document.querySelector(".navbar");
+  var widthClose = 5 + "%";
+  nav.style.width = widthClose;
+  console.log("ok");
+  nav.style.transition = "width 0.3s";
+}
+
+exports.animationMenu = animationMenu;
+exports.closeMenu = closeMenu;
+//   export {update};
+
+
+/*
+      function animation_menu () {
+      var start = Date.now();
+       var animationDuration = 500;
+      var navbar = document.querySelector(".navbar");
+       var navmenu = document.querySelector(".navigation-menu");
+      var timer = setInterval(function() {
+        var timePassed = Date.now() - start;
+        navbar.style.width = timePassed/1.4 + 'px';
+        if (timePassed > 600) clearInterval(timer);
+      }, 70);
+    }
+
+      function animation_close() {
+      var nav = document.querySelector(".navbar");
+        nav.style.width = 5 + "%";
+        nav.style.transition = "all 0.3s";
+    }
+
+    export {animation_menu};
+    export {animation_close};  */
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function modalWin() {
+    var btn1 = document.querySelector('.block-button__reader1'),
+        btn2 = document.querySelector('.block-button__reader2'),
+        btn3 = document.querySelector('.block-button__reader3'),
+        btn4 = document.querySelector('.block-button__reader4'),
+        modal1 = document.querySelector('.modal1'),
+        modal2 = document.querySelector('.modal2'),
+        modal3 = document.querySelector('.modal3'),
+        modal4 = document.querySelector('.modal4'),
+        closeBtn1 = document.querySelector('.closeBtn1'),
+        closeBtn2 = document.querySelector('.closeBtn2'),
+        closeBtn3 = document.querySelector('.closeBtn3'),
+        closeBtn4 = document.querySelector('.closeBtn4');
+    btn1.addEventListener('click', function () {
+        modal1.style.display = 'flex';
+    });
+    btn2.addEventListener('click', function () {
+        modal2.style.display = 'flex';
+    });
+
+    btn3.addEventListener('click', function () {
+        modal3.style.display = 'flex';
+    });
+
+    btn4.addEventListener('click', function () {
+        modal4.style.display = 'flex';
+    });
+
+    closeBtn1.addEventListener('click', function () {
+        modal1.style.display = "none";
+    });
+
+    closeBtn2.addEventListener('click', function () {
+        modal2.style.display = "none";
+    });
+
+    closeBtn3.addEventListener('click', function () {
+        modal3.style.display = "none";
+    });
+
+    closeBtn4.addEventListener('click', function () {
+        modal4.style.display = "none";
+    });
+}
+exports.modalWin = modalWin;
 
 /***/ })
 /******/ ]);

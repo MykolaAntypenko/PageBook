@@ -3,10 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PageBook</title>
-
-	<link rel="stylesheet" type="text/css" href="./src/style.css">
-	<link rel="stylesheet" type="text/css" href="./src/fonts.css">
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width">
 </head>
@@ -20,7 +16,18 @@
 
 			</div>
 			<div class="for_all" id="menu_body">
-				<a href="#" class="for_all-menu">Для усіх&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+				<div id="menu_body">
+	<ul>
+		<li><a href="#" class="for_all-menu">Для усіх&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+			<ul id="sub_menu">
+				<li><a href="#"></a></li>
+				<li><a href="#" class="teenSide">Teen Side</a></li>
+				<li><a href="#" class="babySide">Baby Side</a></li>
+				<li><a href="#" class="all">Для усіх</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
 			</div>
 		</div>
 		<nav class="right-menu">
@@ -29,7 +36,18 @@
 				<li class="right-menu__list--item"><a href="#">Співпраця</a></li>
 				<li class="right-menu__list--item"><a href="#">Підтримка</a></li>
 			</ul>
-			<img src="../images/UI/magnifier.svg" class="magnifier">
+			<a href="#searchwindow"><img src="../images/UI/magnifier.svg" class="magnifier"></a>
+            <a href="#x" class="overlay" id="searchwindow"></a>
+        	<div class="popup">
+        		<h3 class="search__text">Що ви хочете знайти?</h3>
+        		<div class="block__search">	
+            	<input type="text" name="search" id="search">
+            	<span class="bar"></span>
+            	<label for="search">Введіть тут запит</label>
+            </div>
+            	<button class="search__result" onclick="FindOnPage('search'); return false;">Пошук</button>
+          		<a href="#close" class="close" title="Закрыть" href="#close"></a>
+        </div>  
 			<img src="../images/UI/bookmark.svg" class="bookmark">
 		</nav>
 		<div class="menu-mobile">
@@ -45,8 +63,6 @@
 				<a href="#" class="bottom-side__links">Teen Side</a>
 			</div>
 			</div>
-			
-
 		</div>
 	</header>
 	<section class="section-part1">
@@ -63,7 +79,6 @@
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Статті</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Новини</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Колонка</a></li>
-
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Інтерактив</a></li>
 						<li class="navigation-menu__item navigation-menu__item-uppercase"><a href="#">Літклуб</a></li>
 					</ul>	
@@ -75,7 +90,7 @@
 
 					<div class="block-background__content">	
 						<p class="block-image__article block-image__article--uppercase">корисні статті</p>
-						<p class="block-image__header">Дітям про тварин: любити, знати, захищати</p>
+						<p class="block-image__header text">Дітям про тварин: любити, знати, захищати</p>
 						<div class="block-date">
 							<div class="block-calendar">
 								<img class="block-calendar__imgCalendar" src="../images/UI/calendar-grey.svg">
@@ -88,7 +103,21 @@
 							</div>
 						</div>
 						<div class="block-button">
-							<a href="#" class="block-button__reader">Читати</a>
+							<button class="block-button__reader1">Читати</button>
+							<div class="modal1">
+  								<div class="modal-wrapper1">
+    								<div class="modal-header1">
+      									<span class="closeBtn1"></span>
+      									<h3>Дітям про тварин: любити, знати, захищати</h3>
+    								</div>
+    								<div class="modal-body1">
+    									<div class="block__image">	
+    									<img src="../images/common/bearBears.jpg" class="modalImage">
+    								</div>
+      									<p>«Світ тварин» Рут Мартін і Алана Сандерса — це вже друга видана у «Книголаві» книжка з серії «Маленькі дослідники», що чудово годиться для того, щоби ближче познайомити малюків із найпопулярнішими героями тваринного світу.</p>
+    								</div>
+  								</div>
+							</div>
 							<img src="../images/UI/bookmark_big.svg">
 						</div>
 					</div>
@@ -98,13 +127,11 @@
 	<div class="block-sorting">
 		<span>Сортувати за: </span>
 		<button class="sort-popular" id="popular">Популярністю</button>
-		<button class="sort-new">Новизною</button>
-		<button class="sort-reject">Відмінити сортування</button>
+		<button class="sort-new" id="new">Новизною</button>
 	</div>
-	<div class="main-content">
-	<section class="section-part2 blocks" data-view = "32">
+	<div class="main-content" id="graphic_board">
+	<section class="section-part2 blocks teen" data-popular = "7" data-new = "1">
 		<img src="../images/common/ravlik.jpg" class="img-part2" id="image_none1">
-
 		<div class="block-card">
 			<p class="block-text--uppercase">огляди</p>
 			<div class="block-information" id="block_information">
@@ -119,24 +146,37 @@
 						<span>32</span>
 					</span>
 				</div>
-				<p class="block-information__text">Шість пригодницьких історій для літнього читання</p>
+				<p class="block-information__text text">Шість пригодницьких історій для літнього читання</p>
 				<div class="button-read">
-					<a href="#" class="block-button__reader">Читати</a>
+					<button class="block-button__reader2">Читати</button>
+					<div class="modal2">
+  								<div class="modal-wrapper2">
+    								<div class="modal-header2">
+      									<span class="closeBtn2"></span>
+      									<h3>Шість пригодницьких історій для літнього читання</h3>
+    								</div>
+    								<div class="modal-body2">
+    									<div class="block__image">	
+    									<img src="../images/common/ravlik.jpg" class="modalImage">
+    								</div>
+      									<p>Улітку нарешті з’являються час і можливість випробувати всі відкладені на потім пригоди. А також взятися за довгі книжкові цикли та серії, усі пригоди яких не вмістилися в одній книзі. Ми підготували добірку нових і старих, українських і перекладених, коротких і довгих пригодницьких історій. Тут і про магів із фантастичних країн, і про супергероїв, які живуть поруч, і про неймовірне життя у справжньому будиночку на дереві.</p>
+    								</div>
+  								</div>
+							</div>
 				</div>
 				<div class="block-information__bookmark">
 					<img src="../images/UI/bookmark_big.svg">
-				</div>
 			</div>
 		</div>
+		
+
 	</section>
 	<section class="section-part3">
 		<div class="block-cards">
-			<div class="block-cards__card1 blocks" data-view = "980">
+			<div class="block-cards__card1 blocks child" data-popular = "4" data-new = "4">
 							<p class="card1__text">Корисні статті</p>
 				<div class="block-card__image">
-					<a href="#fill_success">
 					<img src="../images/common/Creatures.png" class="card1__image">
-				</a>
 					<img src="../images/UI/bookmark_big.svg" class="card1__bookmark">
 				</div>
 				<div class="block-card1__information">
@@ -149,21 +189,12 @@
 						<span class="view">980</span>
 					</div>
 				</div>
-				<p class="cards__maintext">Найкращі дитячі ілюстратори незалежної України</p>
+				<p class="cards__maintext text">Найкращі дитячі ілюстратори незалежної України</p>
 		</div>
-			<a href="#x" class="overlay" id="fill_success"></a>
-        <div class="popup">
-            <h1>Найкращі дитячі ілюстратори незалежної України</h1>
-            <img src="../images/common/Creatures.png" class="confirmation">
-            <p>Згадки про сучасних найвідоміших у світі дитячих письменників усе частіше з’являються в українському культурному просторі. Перекладних книжок виходить більше й більше. Однак із художниками справи гірші. Їхня творчість залишається здебільшого об’єктом приватних професійних зацікавлень тих чи інших читачів і представників нашого книжкового світу. Премія Андерсена дає чудову можливість компактно познайомитися з тими обраними художниками світового рівня, які щороку представляють свої країни.</p>
-            <a class="close" title="Закрыть" href="#close"></a>
-        </div>  
-			<div class="block-cards__card2 blocks" data-view = "145">
+			<div class="block-cards__card2 blocks child" data-popular = "6" data-new = "6">
 				<p class="card1__text">Афіша</p>
 				<div class="block-card__image">
-					<a href="#fill_success">
 					<img src="../images/common/Seasons.png" class="card1__image">
-				</a>
 					<img src="../images/UI/bookmark_big.svg" class="card1__bookmark">
 				</div>
 				<div class="block-card1__information">
@@ -176,21 +207,12 @@
 						<span class="view">145</span>
 					</div>
 				</div>
-				<p class="cards__maintext">Вихідні з дітьми: 9-10 вересня</p>
+				<p class="cards__maintext text">Вихідні з дітьми: 9-10 вересня</p>
 			</div>
-				<a href="#x" class="overlay" id="fill_success"></a>
-        <div class="popup">
-            <h1>Найкращі дитячі ілюстратори незалежної України</h1>
-            <img src="../images/common/Creatures.png" class="confirmation">
-            <p>Згадки про сучасних найвідоміших у світі дитячих письменників усе частіше з’являються в українському культурному просторі. Перекладних книжок виходить більше й більше. Однак із художниками справи гірші. Їхня творчість залишається здебільшого об’єктом приватних професійних зацікавлень тих чи інших читачів і представників нашого книжкового світу. Премія Андерсена дає чудову можливість компактно познайомитися з тими обраними художниками світового рівня, які щороку представляють свої країни.</p>
-            <a class="close" title="Закрыть" href="#close"></a>
-        </div>  
-			<div class="block-cards__card3 blocks" data-view = "2045">
+			<div class="block-cards__card3 blocks teen" data-popular = "3" data-new = "2">
 				<p class="card1__text">Літклуб</p>
 				<div class="block-card__image">
-					<a href="#fill_success">
 					<img src="../images/common/Relations.png" class="card1__image">
-				</a>
 					<img src="../images/UI/bookmark_big.svg" class="card1__bookmark">
 				</div>
 				<div class="block-card1__information">
@@ -203,18 +225,11 @@
 						<span class="view">2045</span>
 					</div>
 				</div>
-				<p class="cards__maintext">Літклуб Букмоль: розклад на квітень</p>
+				<p class="cards__maintext text">Літклуб Букмоль: розклад на квітень</p>
 			</div>
-				<a href="#x" class="overlay" id="fill_success"></a>
-        <div class="popup">
-            <h1>Найкращі дитячі ілюстратори незалежної України</h1>
-            <img src="../images/common/Creatures.png" class="confirmation">
-            <p>Згадки про сучасних найвідоміших у світі дитячих письменників усе частіше з’являються в українському культурному просторі. Перекладних книжок виходить більше й більше. Однак із художниками справи гірші. Їхня творчість залишається здебільшого об’єктом приватних професійних зацікавлень тих чи інших читачів і представників нашого книжкового світу. Премія Андерсена дає чудову можливість компактно познайомитися з тими обраними художниками світового рівня, які щороку представляють свої країни.</p>
-            <a class="close" title="Закрыть" href="#close"></a>
-        </div>  
 		</div>
 	</section>
-	<section class="section-part4 blocks" data-view = "2045">
+	<section class="section-part4 blocks block__modificator teen" data-popular = "3" data-new = "5">
 		<p class="section-part4__header">Поради</p>
 		<div class="block-part4">
 			<img src="../images/common/cute-brain-cartoon.jpg" class="block-part4__image">
@@ -229,9 +244,23 @@
 						<span>2045</span>
 					</span>
 				</div>
-				<p class="blockpart4-information__text">«Любий щоденнику...»: ваш «настільний» психоаналітик</p>
+				<p class="blockpart4-information__text text">«Любий щоденнику...»: ваш «настільний» психоаналітик</p>
 				<div class="button-read">
-					<a href="#" class="block-button__reader">Читати</a>
+					<button class="block-button__reader3">Читати</button>
+					<div class="modal3">
+  								<div class="modal-wrapper3">
+    								<div class="modal-header3">
+      									<span class="closeBtn3"></span>
+      									<h3>«Любий щоденнику...»: ваш «настільний» психоаналітик</h3>
+    								</div>
+    								<div class="modal-body3">
+    									<div class="block__image">	
+    									<img src="../images/common/cute-brain-cartoon.jpg" class="modalImage">
+    								</div>
+      									<p>Із чим у вас асоціюється слово «щоденник»? Зі школою та записами домашнього завдання? Або ж зі щоденником «Для друзів», сторінки якого дають заповнювати своїм найближчим? А, може, ви полюбляєте ввечері написати про пережите за день у зошиті – розповісти про непорозуміння з батьками чи друзями, про те, що ваші старання заслужено не оцінили на роботі чи навчанні або ж про шоколадні кекси, які ви вчора спекли та якими дуже пишаєтесь?</p>
+    								</div>
+  								</div>
+							</div>
 				</div>
 				<div class="blockpart4-information__bookmark">
 					<img src="../images/UI/bookmark_big.svg">
@@ -241,7 +270,7 @@
 	</section>
 	<section class="section-part5">
 		<div class="block-cards">
-			<div class="block-cards__card1 blocks" data-view = "2045">
+			<div class="block-cards__card1 blocks teen" data-popular = "3" data-new = "5">
 				<p class="card1__text">Огляди</p>
 				<div class="block-card__image">
 					<img src="../images/common/Book.png" class="card1__image">
@@ -257,9 +286,9 @@
 						<span class="view">2045</span>
 					</div>
 				</div>
-				<p class="cards__maintext">«Поміж сірих сутінків» Рути Шепетіс: на противагу зброї</p>
+				<p class="cards__maintext text">«Поміж сірих сутінків» Рути Шепетіс: на противагу зброї</p>
 			</div>
-			<div class="block-cards__card2 blocks" data-view = "3045">
+			<div class="block-cards__card2 blocks teen" data-popular = "2" data-new = "3">
 				<p class="card1__text">Новини</p>
 				<div class="block-card__image">
 					<img src="../images/common/Knowledge.png" class="card1__image">
@@ -275,9 +304,9 @@
 						<span class="view">3045</span>
 					</div>
 				</div>
-				<p class="cards__maintext">У столиці запустили соціальний проект «Київ читає»</p>
+				<p class="cards__maintext text">У столиці запустили соціальний проект «Київ читає»</p>
 			</div>
-			<div class="block-cards__card3 blocks" data-view = "6345">
+			<div class="block-cards__card3 blocks child" data-popular = "1" data-new = "5">
 				<p class="card1__text">Фільми</p>
 				<div class="block-card__image">
 					<img src="../images/common/photo.png" class="card1__image">
@@ -293,11 +322,11 @@
 						<span class="view">6345</span>
 					</div>
 				</div>
-				<p class="cards__maintext">12 фільмів для дітей, знятих за мотивами відомих книжок</p>
+				<p class="cards__maintext text">12 фільмів для дітей, знятих за мотивами відомих книжок</p>
 			</div>
 		</div>
 	</section>
-		<section class="section-part6 blocks" data-view="3045">
+		<section class="section-part6 blocks child" data-popular = "2" data-new = "6">
 			<div class="blockpart6-card">
 				<p class="blockpart6-text--uppercase">Авторська колонка</p>
 				<div class="blockpart6-information">
@@ -311,9 +340,23 @@
 							<span>3045</span>
 						</span>
 					</div>
-					<p class="blockpart6-information__text">Бути собою разом із Туве Янссон: 5 диваків Долини мумі-тролів</p>
+					<p class="blockpart6-information__text text">Бути собою разом із Туве Янссон: 5 диваків Долини мумі-тролів</p>
 					<div class="buttonpart6-read">
-						<a href="#" class="block-button__reader">Читати</a>
+						<button class="block-button__reader4">Читати</button>
+						<div class="modal4">
+  								<div class="modal-wrapper4">
+    								<div class="modal-header4">
+      									<span class="closeBtn4"></span>
+      									<h3>Бути собою разом із Туве Янссон: 5 диваків Долини мумі-тролів</h3>
+    								</div>
+    								<div class="modal-body4">
+    									<div class="block__image">	
+    									<img src="../images/common/beavers.jpg" class="modalImage">
+    								</div>
+      									<p>Створюючи персонажів історій про Мумі-тролів, Туве Янссон, насамперед, намагалася знайти відраду, спокій і прихисток від війни. Про це вона пише у листах до найближчих друзів, які цитуються в документальному фільмі «Казки Долини Мумі-Тролів. Життя Туве Янссон» (Moominland Tales. The life of Tove Jansson, 2012). Кожне зі створінь, що живе в її світі, дещо відтворює членів її родини, оскільки саме в ній вона вбачала символ чогось вічного та незламного.</p>
+    								</div>
+  								</div>
+							</div>
 					</div>
 					<div class="blockpart6-information__bookmark">
 						<img src="../images/UI/bookmark_big.svg">
@@ -325,7 +368,7 @@
 	</section>
 	<section class="section-part7">
 		<div class="block-cards">
-			<div class="block-cards__card1 blocks" data-view = "569">
+			<div class="block-cards__card1 blocks teen" data-popular = "5" data-new = "7">
 				<p class="card1__text">Огляди</p>
 				<div class="block-card__image">
 					<img src="../images/common/Relations.png" class="card1__image">
@@ -341,9 +384,9 @@
 						<span class="view">569</span>
 					</div>
 				</div>
-				<p class="cards__maintext">Альтернативна історія: 4 аніме серіали, які граються з подіями ХХ століття</p>
+				<p class="cards__maintext text">Альтернативна історія: 4 аніме серіали, які граються з подіями ХХ століття</p>
 			</div>
-			<div class="block-cards__card2 blocks" data-view = "2045">
+			<div class="block-cards__card2 blocks child" data-popular = "3" data-new = "5">
 				<p class="card1__text">Афіша</p>
 				<div class="block-card__image">
 					<img src="../images/common/Gallery.png" class="card1__image">
@@ -359,9 +402,9 @@
 						<span class="view">2045</span>
 					</div>
 				</div>
-				<p class="cards__maintext">Вихідні з дітьми: 9-10 вересня</p>
+				<p class="cards__maintext text">Вихідні з дітьми: 9-10 вересня</p>
 			</div>
-			<div class="block-cards__card3 blocks" data-view = "2045">
+			<div class="block-cards__card3 blocks" data-popular = "3" data-new = "5">
 				<p class="card1__text">Корисні статті</p>
 				<div class="block-card__image">
 					<img src="../images/common/Art.png" class="card1__image">
@@ -377,7 +420,7 @@
 						<span class="view">2045</span>
 					</div>
 				</div>
-				<p class="cards__maintext">Літклуб Букмоль: розклад на квітень</p>
+				<p class="cards__maintext text">Літклуб Букмоль: розклад на квітень</p>
 			</div>
 		</div>
 	</section>
@@ -386,6 +429,7 @@
 		<img src="../images/UI/rotate.svg">
 		<p class="block-showmore__text">Показати ще</p>
 	</div>
+	<a class="back_to_top" title="Up">&uarr;</a>
 	<footer class="footer">
 		<div class="footer__email">	
 			<p class="footer__email-text">Підписуйтесь на новини від Bokmal</p>
@@ -409,4 +453,41 @@
 	</footer>
 </body>
 	<script type="text/javascript" src="./bundle.js"></script>
+	<script type="text/javascript">
+var lastResFind=""; 
+var copy_page=""; 
+function TrimStr(s) {
+     s = s.replace( /^\s+/g, '');
+  return s.replace( /\s+$/g, '');
+}
+function FindOnPage(inputId) {
+  var obj = window.document.getElementById(inputId);
+  var textToFind;
+ 
+  if (obj) {
+    textToFind = TrimStr(obj.value);
+  } else {
+  	document.getElementById("screen1").textContent += this.innerText;
+    alert("Введена фраза не знайдена");
+    return;
+  }
+  if (textToFind == "") {
+    alert("Ви нічого не ввели для пошуку");
+    return;
+  }
+  
+  if(document.body.innerHTML.indexOf(textToFind)=="-1")
+  alert("Нічого не знайдено");
+  
+  if(copy_page.length>0)
+        document.body.innerHTML=copy_page;
+  else copy_page=document.body.innerHTML;
+
+  
+  document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," ");
+  document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:#FBBC16; font-size: 2rem;'>"+textToFind+"</a>");
+  lastResFind=textToFind; 
+  window.location = '#'+textToFind;
+ } 
+	</script>
 </html>

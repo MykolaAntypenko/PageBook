@@ -1,6 +1,33 @@
 // sort by popular
+function sortablepopular(cls, attr) {
+    
+       var elementspopular = document.querySelectorAll(cls),
+            length = elementspopular.length,
+            parentelement = document.querySelector('.main-content'),
+            
+            arrayElements = [];
 
-function sortable(cls, attr) {
+        for(var i = 0; i < length; i++) {
+           arrayElements.push({
+              dataAttr : elementspopular[i].getAttribute(attr),
+              el: elementspopular[i]
+           });
+        }
+
+       arrayElements.sort(function(a, b){
+            return parseInt(a.dataAttr) > parseInt(b.dataAttr) ? 1 : -1;
+        });
+
+        for(var j = 0; j < length; j++) {
+            parentelement.appendChild(arrayElements[j].el);
+            parentelement.style.width = "40%";
+            parentelement.style.margin = "0 auto";
+        }
+          console.log("Correct work");
+      }
+
+//sort by new 
+function sortablenew(cls, attr) {
     
         var elements = document.querySelectorAll(cls),
             len = elements.length,
@@ -16,7 +43,7 @@ function sortable(cls, attr) {
         }
 
        arrElements.sort(function(a, b){
-            return parseInt(a.dataAttr) < parseInt(b.dataAttr) ? 1 : -1;
+            return parseInt(a.dataAttr) > parseInt(b.dataAttr) ? 1 : -1;
         });
 
         for(var j = 0; j < len; j++) {
@@ -27,36 +54,47 @@ function sortable(cls, attr) {
           console.log("Correct work");
       }
 
+
+//styles for blocks
       function hidden1() {
-        var pict = document.getElementById('image_none1');
-        var subblocks = document.querySelector('.block-card');
-        var blockmargin = document.querySelector('.section-part2');
+        var pict1 = document.getElementById('image_none1');
+        var subblocks1 = document.querySelector('.block-card');
+        var blockmargin1 = document.querySelector('.section-part2');
+        blockmargin1.style.height = "350px";
+        subblocks1.style.width = "100%";
+        subblocks1.style.height = "100%";
+        subblocks1.style.right = "0";
+        subblocks1.style.top = "0";
+        pict1.style.display = 'none';
+        var pict2 = document.getElementById('image_none2');
+        var subblocks2 = document.querySelector('.blockpart6-card');
+        var blockmargin2 = document.querySelector('.section-part6');
+        subblocks2.style.width = "100%";
+        subblocks2.style.height = "100%";
+        subblocks2.style.left = "0";
+        subblocks2.style.top = "0";
+        blockmargin2.style.margin = "0";
+        blockmargin2.style.height = "350px";
+        pict2.style.display = 'none';
         var alignblocks = document.querySelectorAll('.blocks');
         var len = alignblocks.length;
-for (const block of alignblocks) {
+for (var block of alignblocks) {
     block.style.marginBottom = "50px";
 }
-    
-        subblocks.style.width = "100%";
-        subblocks.style.height = "70%";
-        subblocks.style.right = "0";
-        pict.style.display = 'none';
-
-    }
-    function hidden2() {
-        var pict = document.getElementById('image_none2');
-        var subblocks = document.querySelector('.blockpart6-card');
-        var blockmargin = document.querySelector('.section-part6');
-        subblocks.style.width = "100%";
-        blockmargin.style.margin = "0";
-        pict.style.display = 'none';
+        var element = document.querySelector(".blockpart6-information__bookmark");
+        element.style.left = "90%";
+        element.style.bottom = "-5%";
+        var modificator = document.querySelector(".block__modificator");
+        var mod = document.querySelector(".blockpart4-information__text");
+        mod.style.fontSize = "2rem";
+        modificator.style.marginTop = "0";
+        modificator.style.marginLeft = "0";
+        modificator.style.marginRight = "0";
+        modificator.style.width = "100%";
     }   
 
-      
 
 
-
-
-export {sortable}; 
+export {sortablepopular}; 
+export {sortablenew}; 
 export {hidden1}; 
-export {hidden2}; 

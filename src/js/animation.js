@@ -1,20 +1,20 @@
 
-      function animation_menu () {
-      var start = Date.now();
-      var navbar = document.querySelector(".navbar");
-       var navmenu = document.querySelector(".navigation-menu");
-      var timer = setInterval(function() {
-        var timePassed = Date.now() - start;
-        navbar.style.width = timePassed/1.4 + 'px';
-        if (timePassed > 600) clearInterval(timer);
-      }, 20);
-    }
+function animationMenu () {
+  var nav = document.querySelector(".navbar");
+    var widthOpen = 30 + "%";
+    nav.style.width = widthOpen;
+    console.log("ok");
+    nav.style.transition = "width 0.5s";
+}
 
-      function animation_close() {
-      var nav = document.querySelector(".navbar");
-        nav.style.width = 5 + "%";
-        nav.style.transition = "all 0.5s"
-    }
+function closeMenu () {
+  var nav = document.querySelector(".navbar");
+    var widthClose = 5 + "%";
+    nav.style.width = widthClose;
+    console.log("ok");
+    nav.style.transition = "width 0.3s";
+}
 
-    export {animation_menu};
-    export {animation_close};  
+export {animationMenu};
+export {closeMenu};
+ 

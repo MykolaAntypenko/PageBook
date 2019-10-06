@@ -1,5 +1,4 @@
 const path = require('path');
-// const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ConcatPlugin = require('webpack-js-concat-plugin');
 
 module.exports = {
@@ -8,9 +7,9 @@ module.exports = {
         path: path.join(__dirname),
         filename: 'bundle.js'
     },
-    devServer: {  // configuration for webpack-dev-server
-      contentBase: './',  //source of static assets
-      port: 3000, // port to run dev-server,
+    devServer: {  
+      contentBase: './',  
+      port: 3000, 
       open: true
   } ,
     module: {
@@ -24,24 +23,7 @@ module.exports = {
                     }
                 }
             },
-            {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      },
-            // {
-            //     test: /\.js$/,
-            //     exclude: /(node_modules)/,
-            //     loader: "eslint-loader"
-
-            // },
+         { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
 
             {
                 test: /\.css$/,
