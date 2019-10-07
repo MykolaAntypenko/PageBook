@@ -21,9 +21,9 @@
 		<li><a href="#" class="for_all-menu">Для усіх&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 			<ul id="sub_menu">
 				<li><a href="#"></a></li>
-				<li><a href="#" class="teenSide">Teen Side</a></li>
-				<li><a href="#" class="babySide">Baby Side</a></li>
-				<li><a href="#" class="all">Для усіх</a></li>
+				<li><a href="#" class=ide bottom-side__links">Teen Side</a></li>
+				<li><a href="#" class="babySide bottom-side__links">Baby Side</a></li>
+				<li><a href="#" class="all bottom-side__links">Для усіх</a></li>
 			</ul>
 		</li>
 	</ul>
@@ -58,9 +58,9 @@
 
 			</div>
 			<div class="bottom-side">
-				<a href="#" class="bottom-side__links">Для усіх</a>
-				<a href="#" class="bottom-side__links">Baby Side</a>
-				<a href="#" class="bottom-side__links">Teen Side</a>
+				<a href="#" class="bottom-side__links" data-age = "all">Для усіх</a>
+				<a href="#" class="bottom-side__links" data-age = >Baby Side</a>
+				<a href="#" class="bottom-side__links" data-age = "teen">Teen Side</a>
 			</div>
 			</div>
 		</div>
@@ -68,7 +68,6 @@
 	<section class="section-part1">
 			<div class="navbar">
 				<label  for="nav-toggle"><img src="../images/UI/burger.svg" class="burger__img"></label>
-
 				<div class="nav-menu">
 					<label for="close">X</label>
 					<ul class="navigation-menu">
@@ -130,7 +129,7 @@
 		<button class="sort-new" id="new">Новизною</button>
 	</div>
 	<div class="main-content" id="graphic_board">
-	<section class="section-part2 blocks teen" data-popular = "7" data-new = "1">
+	<section class="section-part2 blocks" data-popular = "7" data-new = "1">
 		<img src="../images/common/ravlik.jpg" class="img-part2" id="image_none1">
 		<div class="block-card">
 			<p class="block-text--uppercase">огляди</p>
@@ -171,9 +170,9 @@
 		
 
 	</section>
-	<section class="section-part3">
+	<section class="section-part3 childs">
 		<div class="block-cards">
-			<div class="block-cards__card1 blocks child" data-popular = "4" data-new = "4">
+			<div class="block-cards__card1 blocks" data-popular = "4" data-new = "4">
 							<p class="card1__text">Корисні статті</p>
 				<div class="block-card__image">
 					<img src="../images/common/Creatures.png" class="card1__image">
@@ -191,7 +190,7 @@
 				</div>
 				<p class="cards__maintext text">Найкращі дитячі ілюстратори незалежної України</p>
 		</div>
-			<div class="block-cards__card2 blocks child" data-popular = "6" data-new = "6">
+			<div class="block-cards__card2 blocks" data-popular = "6" data-new = "6">
 				<p class="card1__text">Афіша</p>
 				<div class="block-card__image">
 					<img src="../images/common/Seasons.png" class="card1__image">
@@ -209,7 +208,7 @@
 				</div>
 				<p class="cards__maintext text">Вихідні з дітьми: 9-10 вересня</p>
 			</div>
-			<div class="block-cards__card3 blocks teen" data-popular = "3" data-new = "2">
+			<div class="block-cards__card3 blocks " data-popular = "3" data-new = "2">
 				<p class="card1__text">Літклуб</p>
 				<div class="block-card__image">
 					<img src="../images/common/Relations.png" class="card1__image">
@@ -229,7 +228,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section-part4 blocks block__modificator teen" data-popular = "3" data-new = "5">
+	<section class="section-part4 blocks block__modificator " data-popular = "3" data-new = "5">
 		<p class="section-part4__header">Поради</p>
 		<div class="block-part4">
 			<img src="../images/common/cute-brain-cartoon.jpg" class="block-part4__image">
@@ -268,9 +267,9 @@
 			</div>
 		</div>
 	</section>
-	<section class="section-part5">
+	<section class="section-part5 teens">
 		<div class="block-cards">
-			<div class="block-cards__card1 blocks teen" data-popular = "3" data-new = "5">
+			<div class="block-cards__card1 blocks" data-popular = "3" data-new = "5">
 				<p class="card1__text">Огляди</p>
 				<div class="block-card__image">
 					<img src="../images/common/Book.png" class="card1__image">
@@ -288,7 +287,7 @@
 				</div>
 				<p class="cards__maintext text">«Поміж сірих сутінків» Рути Шепетіс: на противагу зброї</p>
 			</div>
-			<div class="block-cards__card2 blocks teen" data-popular = "2" data-new = "3">
+			<div class="block-cards__card2 blocks " data-popular = "2" data-new = "3">
 				<p class="card1__text">Новини</p>
 				<div class="block-card__image">
 					<img src="../images/common/Knowledge.png" class="card1__image">
@@ -306,7 +305,7 @@
 				</div>
 				<p class="cards__maintext text">У столиці запустили соціальний проект «Київ читає»</p>
 			</div>
-			<div class="block-cards__card3 blocks child" data-popular = "1" data-new = "5">
+			<div class="block-cards__card3 blocks" data-popular = "1" data-new = "5">
 				<p class="card1__text">Фільми</p>
 				<div class="block-card__image">
 					<img src="../images/common/photo.png" class="card1__image">
@@ -326,7 +325,7 @@
 			</div>
 		</div>
 	</section>
-		<section class="section-part6 blocks child" data-popular = "2" data-new = "6">
+		<section class="section-part6 blocks" data-popular = "2" data-new = "6">
 			<div class="blockpart6-card">
 				<p class="blockpart6-text--uppercase">Авторська колонка</p>
 				<div class="blockpart6-information">
@@ -366,9 +365,9 @@
 		<img src="../images/common/beavers.jpg" class="img-part6" id="image_none2">
 	
 	</section>
-	<section class="section-part7">
+	<section class="section-part7 childs">
 		<div class="block-cards">
-			<div class="block-cards__card1 blocks teen" data-popular = "5" data-new = "7">
+			<div class="block-cards__card1 blocks " data-popular = "5" data-new = "7">
 				<p class="card1__text">Огляди</p>
 				<div class="block-card__image">
 					<img src="../images/common/Relations.png" class="card1__image">
@@ -386,7 +385,7 @@
 				</div>
 				<p class="cards__maintext text">Альтернативна історія: 4 аніме серіали, які граються з подіями ХХ століття</p>
 			</div>
-			<div class="block-cards__card2 blocks child" data-popular = "3" data-new = "5">
+			<div class="block-cards__card2 blocks" data-popular = "3" data-new = "5">
 				<p class="card1__text">Афіша</p>
 				<div class="block-card__image">
 					<img src="../images/common/Gallery.png" class="card1__image">
@@ -404,7 +403,7 @@
 				</div>
 				<p class="cards__maintext text">Вихідні з дітьми: 9-10 вересня</p>
 			</div>
-			<div class="block-cards__card3 blocks" data-popular = "3" data-new = "5">
+			<div class="block-cards__card3 blocks " data-popular = "3" data-new = "5">
 				<p class="card1__text">Корисні статті</p>
 				<div class="block-card__image">
 					<img src="../images/common/Art.png" class="card1__image">
