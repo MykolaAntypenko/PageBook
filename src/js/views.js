@@ -43,5 +43,7 @@ closeBtn4.addEventListener('click', function () {
     modal4.style.display = "none";
 })
 
-}
-    export {modalWin};
+} 
+
+
+export {modalWin};

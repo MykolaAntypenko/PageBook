@@ -21,9 +21,9 @@
 		<li><a href="#" class="for_all-menu">Для усіх&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 			<ul id="sub_menu">
 				<li><a href="#"></a></li>
-				<li><a href="#" class=ide bottom-side__links">Teen Side</a></li>
+				<li><a href="#" class="teenSide bottom-side__links">Teen Side</a></li>
 				<li><a href="#" class="babySide bottom-side__links">Baby Side</a></li>
-				<li><a href="#" class="all bottom-side__links">Для усіх</a></li>
+				<li><a href="#" class="allSide bottom-side__links">Для усіх</a></li>
 			</ul>
 		</li>
 	</ul>
@@ -45,7 +45,8 @@
             	<span class="bar"></span>
             	<label for="search">Введіть тут запит</label>
             </div>
-            	<button class="search__result" onclick="FindOnPage('search'); return false;">Пошук</button>
+				<button class="search__result" onclick="FindOnPage('search');">Пошук</button>
+				<span class="messageError"></span>
           		<a href="#close" class="close" title="Закрыть" href="#close"></a>
         </div>  
 			<img src="../images/UI/bookmark.svg" class="bookmark">
@@ -129,7 +130,7 @@
 		<button class="sort-new" id="new">Новизною</button>
 	</div>
 	<div class="main-content" id="graphic_board">
-	<section class="section-part2 blocks" data-popular = "7" data-new = "1">
+	<section class="section-part2 blocks all childs" data-popular = "7" data-new = "1">
 		<img src="../images/common/ravlik.jpg" class="img-part2" id="image_none1">
 		<div class="block-card">
 			<p class="block-text--uppercase">огляди</p>
@@ -170,7 +171,7 @@
 		
 
 	</section>
-	<section class="section-part3 childs">
+	<section class="section-part3 childs all">
 		<div class="block-cards">
 			<div class="block-cards__card1 blocks" data-popular = "4" data-new = "4">
 							<p class="card1__text">Корисні статті</p>
@@ -228,7 +229,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section-part4 blocks block__modificator " data-popular = "3" data-new = "5">
+	<section class="section-part4 blocks block__modificator all" data-popular = "3" data-new = "5">
 		<p class="section-part4__header">Поради</p>
 		<div class="block-part4">
 			<img src="../images/common/cute-brain-cartoon.jpg" class="block-part4__image">
@@ -267,7 +268,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section-part5 teens">
+	<section class="section-part5 teens all">
 		<div class="block-cards">
 			<div class="block-cards__card1 blocks" data-popular = "3" data-new = "5">
 				<p class="card1__text">Огляди</p>
@@ -325,7 +326,7 @@
 			</div>
 		</div>
 	</section>
-		<section class="section-part6 blocks" data-popular = "2" data-new = "6">
+		<section class="section-part6 blocks all" data-popular = "2" data-new = "6">
 			<div class="blockpart6-card">
 				<p class="blockpart6-text--uppercase">Авторська колонка</p>
 				<div class="blockpart6-information">
@@ -365,7 +366,7 @@
 		<img src="../images/common/beavers.jpg" class="img-part6" id="image_none2">
 	
 	</section>
-	<section class="section-part7 childs">
+	<section class="section-part7 childs all">
 		<div class="block-cards">
 			<div class="block-cards__card1 blocks " data-popular = "5" data-new = "7">
 				<p class="card1__text">Огляди</p>
@@ -403,7 +404,7 @@
 				</div>
 				<p class="cards__maintext text">Вихідні з дітьми: 9-10 вересня</p>
 			</div>
-			<div class="block-cards__card3 blocks " data-popular = "3" data-new = "5">
+			<div class="block-cards__card3 blocks" data-popular = "3" data-new = "5">
 				<p class="card1__text">Корисні статті</p>
 				<div class="block-card__image">
 					<img src="../images/common/Art.png" class="card1__image">
@@ -471,13 +472,24 @@ function FindOnPage(inputId) {
     return;
   }
   if (textToFind == "") {
-    alert("Ви нічого не ввели для пошуку");
+	var message = document.querySelector(".messageError");
+	message.textContent = "Ви нічого не ввели";
+	message.style.fontSize = "20px";
+	message.style.fontFamily = "ProximaNova-Semibold";
+	message.style.marginTop = "20px";
+	obj.value = "";
     return;
   }
   
-  if(document.body.innerHTML.indexOf(textToFind)=="-1")
-  alert("Нічого не знайдено");
-  
+  if(document.body.innerHTML.indexOf(textToFind)=="-1") {
+	var message = document.querySelector(".messageError");
+	message.textContent = "Нічого не знайдено";
+  message.style.fontSize = "20px";
+  message.style.fontFamily = "ProximaNova-Semibold";
+	message.style.marginTop = "20px";
+  obj.value = "";
+    return;
+  }
   if(copy_page.length>0)
         document.body.innerHTML=copy_page;
   else copy_page=document.body.innerHTML;

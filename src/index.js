@@ -8,7 +8,9 @@ import {hidden1} from './js/sorting.js';
 import {animationMenu} from './js/animation.js';
 import {closeMenu} from './js/animation.js';
 import {modalWin} from './js/views.js';
-import {tabs} from './js/tabs.js';
+import {tabsAll} from './js/tabs.js';
+import {tabsKids} from './js/tabs.js';
+import {tabsTeen} from './js/tabs.js';
 
 var sortpopular = document.getElementById("popular");
 sortpopular.addEventListener("click", () => sortablepopular(".blocks", "data-popular"));
@@ -29,10 +31,11 @@ var menuclose = document.querySelector("#close");
 menuclose.addEventListener("change", closeMenu);
 modalWin();
 
-var link = document.querySelectorAll(".bottom-side__links");
-for (var bl of link) {
-bl.addEventListener("click", tabs);
-}
-modalWin();
+var tabTeen = document.querySelector(".teenSide");
+tabTeen.addEventListener("click", tabsTeen);
+var tabKid = document.querySelector(".babySide");
+tabKid.addEventListener("click", tabsKids);
+var tabAll = document.querySelector(".allSide");
+tabAll.addEventListener("click", tabsAll);
 
 
