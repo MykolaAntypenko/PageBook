@@ -1,17 +1,3 @@
-/*function tabsTeen() {
-	var teen = document.querySelectorAll(".teens");
-	for (var blocks of teen) {
-	blocks.style.display = "flex";
-	blocks.style.width = "40%";
-    blocks.style.margin = "0 auto";
-}
-	var childs = document.querySelectorAll(".child");
-	for (var blocks of childs) {
-	blocks.style.display = "none";
-
-}
-console.log("good");
-}*/
 
 function tabsTeen() {
 	var content = document.querySelectorAll(".all");
@@ -26,18 +12,17 @@ function tabsTeen() {
         case "Teen Side":
                 for (const block of content) {
                     block.style.display = "none";
+                    block.style.marginTop = "30px";
                 }
             for (const block of teen) {
                 block.style.display = "block";
+                block.style.marginTop = "30px";
             }
             for (const block of child) {
                 block.style.display = "none";
+                block.style.marginTop = "30px";
             }
             menu.innerHTML = "Teen Side&nbsp;&nbsp;&nbsp;<i class='fa fa-chevron-down' aria-hidden='true'></i>";
-            break;
-
-        default:
-            throw "Unexpected select value during filtering";
             break;
     }
 }
@@ -51,19 +36,19 @@ function tabsKids () {
         case "Baby Side":
                 for (const block of content) {
                     block.style.display = "none";
+                    block.style.marginTop = "30px";
                 }
                 for (const block of teen) {
                     block.style.display = "none";
+                    block.style.marginTop = "30px";
                 }
             for (const block of child) {
                 block.style.display = "block";
+                block.style.marginTop = "30px";
             }
             menu.innerHTML = "Baby Side&nbsp;&nbsp;&nbsp;<i class='fa fa-chevron-down' aria-hidden='true'></i>";
             break;
 
-        default:
-            throw "Unexpected select value during filtering";
-            break;
     }
 }
 function tabsAll() {
@@ -76,19 +61,19 @@ function tabsAll() {
         case "Для усіх":
             for (const block of content) {
                 block.style.display = "block";
+                block.style.marginTop = "30px";
             }
             for (const block of teen) {
                 block.style.display = "block";
+                block.style.marginTop = "30px";
             }
             for (const block of child) {
                 block.style.display = "block";
+                block.style.marginTop = "30px";
             }
             menu.innerHTML = "Для усіх&nbsp;&nbsp;&nbsp;<i class='fa fa-chevron-down' aria-hidden='true'></i>";
             break;
 
-        default:
-            throw "Unexpected select value during filtering";
-            break;
     }
 }
 

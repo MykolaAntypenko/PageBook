@@ -170,7 +170,8 @@ transform: rotate(180deg);
     margin-bottom: 30px;
 }
 
-#search {
+#search,
+#searchMobile {
   font-size: 16px;
   padding: 10px;
   display: block;
@@ -179,11 +180,13 @@ transform: rotate(180deg);
   border-bottom: 1px solid #3B3B3B;
 }
 
-#search:focus {
+#search:focus,
+#searchMobile:focus {
   outline: none;
 }
 
-label[for="search"] {
+label[for="search"],
+label[for="searchMobile"] {
     font-family: ProximaNova-Semibold;
     font-size: 2rem;
   color: #3B3B3B;
@@ -197,7 +200,8 @@ label[for="search"] {
   -webkit-transition: 0.2s ease all;
 }
 
-#search:focus ~ label[for="search"] {
+#search:focus ~ label[for="search"],
+#searchMobile:focus ~ label[for="searchMobile"] {
   top: -15px;
   font-size: 14px;
   color: #5264AE;
@@ -227,7 +231,9 @@ label[for="search"] {
 }
 
 #search:focus ~ .bar:before,
-#search:focus ~ .bar:after {
+#search:focus ~ .bar:after,
+#searchMobile:focus ~ .bar:before,
+#searchMobile:focus ~ .bar:after {
   width: 50%;
 }
 
@@ -380,7 +386,7 @@ font-size: 24px;
  
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .popup {
-    width:85%;
+    width:55%;
   }
 }
 

@@ -184,11 +184,11 @@ header {
 	text-transform: uppercase;
 }
 
-#nav-toggle:checked ~ .section-part1 .navbar .nav-menu .navigation-menu {
+#nav-toggle:checked ~ .section-part1 .navbar .nav-menu .navigation-menu,
+#nav-toggle__mobile:checked ~ .section-part1 .navbar .nav-menu .navigation-menu {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-
 }
 
 .nav-menu {
@@ -239,15 +239,18 @@ label[for="close"] {
 	display: none;
 }
 
-#nav-toggle:checked ~ .section-part1 .navbar .nav-menu label {
+#nav-toggle:checked ~ .section-part1 .navbar .nav-menu label,
+#nav-toggle__mobile:checked ~ .section-part1 .navbar .nav-menu label {
 	display: block;
 }
 
-#nav-toggle:checked ~ .section-part1 .navbar  label .burger__img {
+#nav-toggle:checked ~ .section-part1 .navbar  label .burger__img,
+#nav-toggle__mobile:checked ~ .section-part1 .navbar  label .burger__img {
 	display: none;
 }
 
-#close:checked ~ .section-part1 .navbar  .nav-menu label[for="close"] {
+#close:checked ~ .section-part1 .navbar  .nav-menu label[for="close"]
+ {
 	display: none;
 }
 
@@ -255,7 +258,8 @@ label[for="close"] {
 	display: flex;
 }
 
-#nav-toggle:checked ~ .section-part1 .navbar {
+#nav-toggle:checked ~ .section-part1 .navbar,
+#nav-toggle__mobile:checked ~ .section-part1 .navbar {
 	display: flex;
 	position: fixed;
 z-index: 999;
@@ -303,6 +307,10 @@ label[for="close"]:hover {
 }
 
 label[for="nav-toggle"] {
+	cursor: pointer;
+}
+
+label[for="nav-toggle__mobile"] {
 	cursor: pointer;
 }
 
@@ -608,35 +616,27 @@ label[for="nav-toggle"] {
 
 
 .block-cards {
-	display: grid;
+	display: flex;
 	width: 80%;
-	grid-template-columns: [col1start] 1fr [col1end] 5% 
-                           [col2start] 1fr [col2end] 5%
-                            [col3start] 1fr [col3end];
-    grid-template-rows: [row1start] 1fr [row1end];
+	justify-content: space-between;
+	flex-wrap: wrap;
     margin-left: 10%;
 }
 
 .block-cards__card1 {
-	 grid-column: col1start / col1end;
-   grid-row: row1start;
-   width: 100%;
+   width: 30%;
    height:100%;
 	position: relative;
 }
 
 .block-cards__card2 {
-	 grid-column: col2start / col2end;
-   grid-row: row1start;
-   width: 100%;
+   width: 30%;
    height:100%;
 	position: relative;
 }
 
 .block-cards__card3 {
-	 grid-column: col3start / col3end;
-   grid-row: row1start;
-   width: 100%;
+   width: 30%;
    height:100%;
 	position: relative;
 }
@@ -1071,14 +1071,7 @@ display: none;
 }
 
 @media (max-width: 992px) {
-	#nav-toggle:checked ~ .section-part1 .navbar {
-	width: 100%;
-	display: flex;
-	position: fixed;
-	z-index: 99999;
-	height: 100vh;
 
-}
 
 label[for="close"] {
 	margin-top: 100px;
@@ -1269,7 +1262,19 @@ span.block-view__date {
 }
 }
 
+@media (max-width: 900px) {
+.block-background__content {
+	top: 70px;
+	}
+}
+
 @media (max-width: 800px) {
+	.section-part1 {
+		position: relative;
+		margin: 0;
+	}
+
+
 	.section-part7 {
 		margin-top: 100px;
 	}
@@ -1280,48 +1285,54 @@ span.block-view__date {
 	width: auto;
 }
 
+.block-sorting {
+	margin-bottom: 50px;
+}
+
 	.block-background__content {
 	position: absolute;
-	top: 70px;
+	top: 60px;
 	margin-left: 80px;
 	height: auto;
 }
 
+.block-image__article,
+.block-image__header,
+.block-date {
+	padding-bottom: 10px;
+}
+
 .block-cards {
-	display: grid;
+	display: flex;
 	width: 80%;
-	grid-template-columns: [col1start] 1fr [col1end];
-    grid-template-rows: [row1start] 1fr [row1end] 50px [row2start] 1fr [row2end] 50px [row3start] 1fr [row3end] 100px;
+	justify-content: center;
+	flex-wrap: wrap;
     margin-left: 10%;
 }
 
 .block-cards__card1 {
-	 grid-column: col1start / col1end;
-   grid-row: row1start;
    width: 100%;
    height:100%;
 	position: relative;
+	padding-bottom: 30px;
 }
 
 .block-cards__card2 {
-	 grid-column: col1start / col1end;
-   grid-row: row2start;
    width: 100%;
    height:100%;
 	position: relative;
+	padding-bottom: 30px;
 }
 
 .block-cards__card3 {
-	 grid-column: col1start / col1end;
-   grid-row: row3start;
    width: 100%;
    height:100%;
 	position: relative;
+	padding-bottom: 30px;
 }
 
-.section-part1 {
-	margin-bottom: 50px;
-}
+
+
 
 .img-part2 {
 	width: 80%;
@@ -1349,7 +1360,7 @@ span.block-view__date {
 }
 
 .section-part6 {
-	margin: 0 5%;
+	margin:50px 5% 0 5%;
 	width: 85%;
 }
 .img-part6 {
@@ -1423,7 +1434,7 @@ display: flex;
 
 	.block-background__content {
 	position: absolute;
-	top: 50px;
+	top: 30px;
 	margin-left: 60px;
 	height: auto;
 }
@@ -1431,6 +1442,12 @@ display: flex;
 .block-part4__information {
 	height: 65%;
 	width: 70%;
+}
+
+.block-sorting span,
+.block-sorting .sort-popular,
+.block-sorting .sort-new{
+	font-size: 1.6rem;
 }
 }
 

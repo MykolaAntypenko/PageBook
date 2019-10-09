@@ -8,6 +8,7 @@
 </head>
 <body>
 	<input type="radio" id="nav-toggle" hidden name="menu">
+	<input type="radio" id="nav-toggle__mobile" hidden name="menu">
 	<input type="radio" id="close" hidden name="menu">
 	<header>
 		<div class="left_header">
@@ -45,23 +46,35 @@
             	<span class="bar"></span>
             	<label for="search">Введіть тут запит</label>
             </div>
-				<button class="search__result" onclick="FindOnPage('search');">Пошук</button>
-				<span class="messageError"></span>
+				<button class="search__resultMobile" onclick="FindOnPage('search');">Пошук</button>
+				<span class="messageErrorMobile"></span>
           		<a href="#close" class="close" title="Закрыть" href="#close"></a>
         </div>  
 			<img src="../images/UI/bookmark.svg" class="bookmark">
 		</nav>
 		<div class="menu-mobile">
 			<div class="top-side">
-				<label  for="nav-toggle"><img src="../images/UI/burger.svg" class="burger__img"></label>
+				<label  for="nav-toggle__mobile"><img src="../images/UI/burger.svg" class="burger__img"></label>
 				<img src="../images/Logo.svg" alt="BOKMAI" class="logo-mobile">
-			<img src="../images/UI/magnifier.svg" class="magnifier">
+			<a href="#searchwindow1"><img src="../images/UI/magnifier.svg" class="magnifier"></a>
+            <a href="#x" class="overlay" id="searchwindow1"></a>
+        	<div class="popup">
+        		<h3 class="search__text">Що ви хочете знайти?</h3>
+        		<div class="block__search">	
+            	<input type="text" name="search" id="searchMobile">
+            	<span class="bar"></span>
+            	<label for="search">Введіть тут запит</label>
+            </div>
+				<button class="search__result" onclick="FindOnPage('searchMobile');">Пошук</button>
+				<span class="messageError"></span>
+          		<a href="#close" class="close" title="Закрыть" href="#close"></a>
+        </div>  
 
 			</div>
 			<div class="bottom-side">
-				<a href="#" class="bottom-side__links" data-age = "all">Для усіх</a>
-				<a href="#" class="bottom-side__links" data-age = >Baby Side</a>
-				<a href="#" class="bottom-side__links" data-age = "teen">Teen Side</a>
+				<a href="#" class="bottom-side__links allMobile">Для усіх</a>
+				<a href="#" class="bottom-side__links babyMobile">Baby Side</a>
+				<a href="#" class="bottom-side__links teenMobile">Teen Side</a>
 			</div>
 			</div>
 		</div>
@@ -130,7 +143,7 @@
 		<button class="sort-new" id="new">Новизною</button>
 	</div>
 	<div class="main-content" id="graphic_board">
-	<section class="section-part2 blocks all childs" data-popular = "7" data-new = "1">
+	<section class="section-part2 blocks all" data-popular = "7" data-new = "1">
 		<img src="../images/common/ravlik.jpg" class="img-part2" id="image_none1">
 		<div class="block-card">
 			<p class="block-text--uppercase">огляди</p>
@@ -473,20 +486,30 @@ function FindOnPage(inputId) {
   }
   if (textToFind == "") {
 	var message = document.querySelector(".messageError");
+	var messageMobile = document.querySelector(".messageErrorMobile");
 	message.textContent = "Ви нічого не ввели";
 	message.style.fontSize = "20px";
 	message.style.fontFamily = "ProximaNova-Semibold";
 	message.style.marginTop = "20px";
+	messageMobile.textContent = "Ви нічого не ввели";
+	messageMobile.style.fontSize = "20px";
+	messageMobile.style.fontFamily = "ProximaNova-Semibold";
+	messageMobile.style.marginTop = "20px";
 	obj.value = "";
     return;
   }
   
   if(document.body.innerHTML.indexOf(textToFind)=="-1") {
 	var message = document.querySelector(".messageError");
+	var messageMobile = document.querySelector(".messageErrorMobile");
 	message.textContent = "Нічого не знайдено";
   message.style.fontSize = "20px";
   message.style.fontFamily = "ProximaNova-Semibold";
 	message.style.marginTop = "20px";
+	messageMobile.textContent = "Нічого не знайдено";
+  messageMobile.style.fontSize = "20px";
+  messageMobile.style.fontFamily = "ProximaNova-Semibold";
+	messageMobile.style.marginTop = "20px";
   obj.value = "";
     return;
   }
